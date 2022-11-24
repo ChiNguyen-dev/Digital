@@ -11,7 +11,7 @@
  * 
  */
 
-$config['base_url'] = "http://localhost:8080/ismart.com/admin/";
+$config['base_url'] = "http://localhost:8080/Project/Digital/admin/";
 
 
 $config['default_module'] = 'home';
