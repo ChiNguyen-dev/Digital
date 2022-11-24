@@ -1,0 +1,100 @@
+/*MENU*/
+.menu-page #content .section-detail {
+    display: flex;
+}
+
+.menu-page #list-menu {
+    flex-basis: 30%;
+    background: #fff;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.menu-page #list-menu .list-menu__title,
+.menu-page #category-menu .category-menu__title{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 5px 8px 0;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-page #category-menu {
+    flex-basis: 70%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/*.menu-page #list-menu .form-group {*/
+/*    padding-bottom: 15px;*/
+/*}*/
+
+.menu-page #list-menu .form-group label {
+    display: block;
+    color: #364150;
+    padding-bottom: 10px;
+}
+
+.menu-page #list-menu .form-group input, .menu-page #list-menu .form-group textarea {
+    width: 100%;
+    float: none;
+}
+
+.menu-page #list-menu .form-group textarea {
+    height: 100px;
+}
+
+.menu-page #list-menu .form-group p {
+    font-size: 13px;
+    color: #9b9b9b;
+    line-height: 18px;
+    padding-top: 10px;
+}
+
+.menu-page .section-detail label {
+    font-size: 15px;
+    display: block;
+    font-family: 'Roboto Medium';
+    font-weight: normal;
+}
+
+.menu-page .section-detail input[type="text"], .menu-page .section-detail input[type="number"] {
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    width: 30%;
+}
+
+.form-group select {
+    width: 100% !important;
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+}
+
+.menu-page .section-detail #btn-save-list {
+    border-radius: 3px;
+    padding: 5px 15px;
+    background-color: #0078ff;
+    border: 1px solid #0078ff;
+    color: white;
+}
+
+.actions select {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+}
+
+.actions button {
+    border-radius: 3px;
+    border: 1px solid #afafaf;
+    padding: 2px 15px;
+    background: #fafafa;
+}
+
+.actions button:hover {
+    background: #e2e2e2;
+}

@@ -1,0 +1,46 @@
+RewriteEngine On
+
+RewriteRule ^login$ index.php?mod=users&controllers=index&action=login
+
+RewriteRule ^logout index.php?mod=users&controllers=index&action=logout
+
+
+RewriteRule ^home.html$ index.php?mod=home&controllers=index&action=index
+
+
+
+RewriteRule ^pages/add$ index.php?mod=pages&controllers=index&action=add
+
+RewriteRule ^pages/danh-sach-trang$ index.php?mod=pages&controllers=index&action=index
+
+RewriteRule ^san-pham$ index.php?mod=products&controllers=index&action=index
+
+RewriteRule ^san-pham/page-([0-9]+)$ index.php?mod=products&controllers=index&action=index&page=$1
+
+RewriteRule ^san-pham/add.html$ index.php?mod=products&controllers=product&action=add
+
+RewriteRule ^san-pham/edit-([0-9]+).html$ index.php?mod=products&controllers=product&action=update&id=$1
+
+
+RewriteRule ^danh-muc-san-pham.html$ index.php?mod=products&controllers=cate&action=cate
+
+RewriteRule ^danh-sach-mau.html$ index.php?mod=products&controllers=color&action=index
+
+
+RewriteRule ^user/edit-([0-9]+).html$ index.php?mod=users&controllers=group&action=updateGroup&id=$1
+
+RewriteRule ^user/delete$ index.php?mod=users&controllers=group&action=deleteGroup
+
+RewriteRule ^thanh-vien.html$ index.php?mod=users&controllers=group&action=indexGroup
+
+RewriteRule ^user/add$ index.php?mod=users&controllers=group&action=addGroup
+
+RewriteRule ^khach-hang.html$ index.php?mod=sales&controllers=guest&action=index
+
+RewriteRule ^vai-tro.html$ index.php?mod=roles&controllers=index&action=index
+
+
+
+
+
+RewriteRule ^console$ http://localhost:8080/ismart.com/admin/modules/console/console.php

@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #ff4988, #fab1a0, #fffefc);
+}
+
+.signin {
+    font-family: "Poppins", Sans-Serif;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 55px 35px;
+}
+
+.signin__heading {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: black;
+}
+
+.signin__welcome {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.signin__form .form__group {
+    margin-bottom: 15px;
+}
+
+.form__group .form__input {
+    font-family: "Poppins", Sans-Serif;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #eee;
+    transition: 0.25s linear;
+    width: 100%;
+}
+.signin__form .form__submit {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #00aefd;
+    color: white;
+    font-size: 20px;
+    font-family: "Poppins", Sans-Serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form__submit--text {
+    margin: 0 auto;
+}
+.form__tos {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+.form__tos-text {
+    font-size: 18px;
+}

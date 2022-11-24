@@ -1,0 +1,124 @@
+#header-wp {
+    background: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    margin-bottom: 50px;
+}
+
+.box-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.1)
+}
+
+#logo {
+    width: 200px;
+    padding: 20px 0px;
+    margin: 0px 39px;
+}
+
+.log__link {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dropdown {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 39px;
+    position: relative;
+}
+
+.dropdown:hover .dropdown__list {
+    display: block;
+}
+
+.dropdown__select {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #707070;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.dropdown__list {
+    border-radius: 4px;
+    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 12px;
+}
+
+.dropdown__link:hover {
+    color: #f39c12;
+}
+
+.dropdown__list:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transform: translateY(-100%);
+}
+
+
+.dropdown__item {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    background: #5a4bde;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.dropdown__item:first-child {
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+.dropdown__item:first-child:before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #5a4bde;
+    transform: translateY(-100%);
+}
+
+.dropdown__item:first-child:hover:before {
+    border-bottom-color: #5a4bde;
+    transition: background-color 0.2s linear;
+}
+
+.dropdown__item:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+/*.dropdown__item:hover {*/
+/*    background-color: #5a4bde;*/
+/*}*/
