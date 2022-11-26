@@ -11,9 +11,7 @@
  * 
  */
 
-$config['base_url'] = "http://localhost:8080/Project/Digital/admin/";
-
-
+$config['base_url'] = "http://localhost:8080/Digital/admin/";
 $config['default_module'] = 'home';
 $config['default_controller'] = 'index';
 $config['default_action'] = 'index';

@@ -117,7 +117,8 @@ $(document).ready(function () {
     });
 
     // URL DEFAULT
-    const Default_URL = "http://localhost:8080/ismart.com/";
+    const Default_URL = "http://localhost:8080/Digital/";
+
     // ADD CART FROM DETAIL
     $(".add-cart--detail").click(function () {
         const color = $(".color__infor--active").attr("color-id");

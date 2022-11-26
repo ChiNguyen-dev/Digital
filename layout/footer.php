@@ -60,7 +60,7 @@
     <div id="foot-bot">
         <div class="wp-inner">
             <!--            <p id="copyright">© Bản quyền thuộc về unitop.vn | Php Master</p>-->
-            <p id="copyright">© Bản quyền thuộc về chinguyen-dev | Php Master</p>
+            <p id="copyright" class="mb-0">© Bản quyền thuộc về chinguyen-dev | Php Master</p>
         </div>
     </div>
 </div>

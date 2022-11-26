@@ -67,3 +67,14 @@ function address($province_id, $district_id, $ward_id)
         return $ward["name"] . ", " . $district["name"] . ", " . $province["name"];
     }
 }
+
+/*
+ * ADD
+ */
+function add($table, $data)
+{
+    $tables = $table . 's';
+    $field_id = $table . '_id';
+    $id = db_insert("`" . $tables . "`", $data);
+    return findOne("$tables", "$field_id", $id);
+}

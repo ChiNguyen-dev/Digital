@@ -18,12 +18,14 @@
  * charset: Mã ký tự nội dung mail(UTF-8)
  */
 
-$email = Array(
+$config["email"] = array(
     'protocol' => 'smtp',
-    'smtp_host' => 'ssl://smtp.googlemail.com',
-    'smtp_port' => 465,
-    'smtp_user' => '',
-    'smtp_pass' => '',
+    'smtp_host' => 'smtp.gmail.com',
+    'smtp_port' => 587,
+    'smtp_user' => 'nguyendev2001@gmail.com',
+    'smtp_fullname' => 'Digital Store',
+    'smtp_pass' => 'ilmofrmdsikybtri',
+    'smtp_secure' => 'tls',
     'smtp_timeout' => '7',
     'mailtype' => 'html',
     'charset' => 'UTF-8'
