@@ -13,7 +13,7 @@ RewriteRule ^pages/add$ index.php?mod=pages&controllers=index&action=add
 
 RewriteRule ^pages/danh-sach-trang$ index.php?mod=pages&controllers=index&action=index
 
-RewriteRule ^san-pham$ index.php?mod=products&controllers=index&action=index
+RewriteRule ^san-pham.html$ index.php?mod=products&controllers=index&action=index
 
 RewriteRule ^san-pham/page-([0-9]+)$ index.php?mod=products&controllers=index&action=index&page=$1
 

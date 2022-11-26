@@ -14,12 +14,12 @@ function addAction()
     $categories = findAll("categories");
     $data["categories"] = data_tree($categories, 0);
     $data["colors"] = findAll("colors");
-
     if (isset($_POST["btn-submit"])) {
         $data["products"] = array(
             "p_name" => $_POST["name"],
             "price" => $_POST["price"],
             "sku" => $_POST["sku"],
+            "detail" => $_POST["detail"],
             "exceprt" => $_POST["desc"],
             "slug" => create_slug($_POST["name"]),
             "status" => $_POST["exampleRadios"],
@@ -27,8 +27,10 @@ function addAction()
             "category_id" => $_POST["category"],
             "isDelete" => 0
         );
+
         if (empty($_POST["name"]) || empty($_POST["price"]) || empty($_POST["sku"]) || empty($_POST["desc"]) ||
-            empty($_POST["category"]) || empty($_POST["color"]) || empty($_POST["quantity"]) || empty($_FILES["images"]["name"])) {
+            empty($_POST["category"]) || empty($_POST["color"]) || empty($_POST["quantity"]) ||
+            empty($_FILES["images"]["name"]) || empty($_POST["detail"])) {
             $data["products"]["quantity"] = $_POST["quantity"];
             load_view("add", $data);
         } else {

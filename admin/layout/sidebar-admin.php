@@ -71,7 +71,7 @@
                     </li>
                 <?php } ?>
                 <li class="nav-item">
-                    <a href="san-pham" title="" class="nav-link">Danh sách sản phẩm</a>
+                    <a href="san-pham.html" title="" class="nav-link">Danh sách sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a href="danh-muc-san-pham.html" title="" class="nav-link">Danh mục sản phẩm</a>

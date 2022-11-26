@@ -68,6 +68,15 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="desc">Chi tiết</label>
+                                <textarea class="form-control ckeditor"
+                                          id="detail"
+                                          name="detail"
+                                          rows="4">
+                                    <?php echo !empty($products["detail"]) ? $products["detail"] : '' ?>
+                                </textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="desc">Mô tả</label>
                                 <textarea class="form-control ckeditor" id="desc" name="desc" rows="4">
                                             <?php echo !empty($products["desc"]) ? $products["desc"] : '' ?>

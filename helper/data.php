@@ -12,13 +12,15 @@ function show_array($data)
 function menu($data, $parent_id, $class, $level = 0): string
 {
     $result = $level == 0 ? "<ul class='{$class}'>" : "<ul class='sub-menu'>";
-    foreach ($data as $value) {
-        if ($value["parent_id"] == $parent_id) {
-            $result .= "<li>";
-            $result .= "<a href='san-pham/{$value["slug"]}' title=''>{$value['cate_name']}</a>";
-            if (has_child($data, $value["category_id"])) {
+    if (!empty($data)) {
+        foreach ($data as $value) {
+            if ($value["parent_id"] == $parent_id) {
+                $result .= "<li>";
+                $result .= "<a href='san-pham/{$value["slug"]}' title=''>{$value['cate_name']}</a>";
+                if (has_child($data, $value["category_id"])) {
 
-                $result .= menu($data, $value["category_id"], $class, $level + 1);
+                    $result .= menu($data, $value["category_id"], $class, $level + 1);
+                }
             }
         }
     }

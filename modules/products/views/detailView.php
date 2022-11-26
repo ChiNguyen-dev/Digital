@@ -43,7 +43,7 @@
                     <div class="info">
                         <h3 class="product-name"> <?php echo !empty($product["p_name"]) ? $product["p_name"] : "" ?></h3>
                         <div class="desc">
-                            <?php echo !empty($product["exceprt"]) ? $product["exceprt"] : "" ?>
+                            <?php echo !empty($product["detail"]) ? $product["detail"] : "" ?>
                         </div>
                         <div class="color">
                             <?php if ($colors != null) { ?>
@@ -97,24 +97,7 @@
                     <h3 class="section-title">Mô tả sản phẩm</h3>
                 </div>
                 <div class="section-detail">
-                    <p>Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và những
-                        người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook
-                        440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.
-                        Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và
-                        những
-                        người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook
-                        440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.
-                        Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và
-                        những
-                        người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook
-                        440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.
-                        Máy tính xách tay HP Probook 440 G2 là dòng máy tính xách tay thích hợp cho doanh nghiệp và
-                        những
-                        người làm văn phòng. Do đó, ngoài cấu hình tốt, thiết kế bền bỉ, máy tính xách tay HP Probook
-                        440 G2 còn có khả năng bảo mật toàn diện giúp bạn luôn yên tâm về dữ liệu của mình.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid autem commodi
-                        consectetur consequuntur dolore ducimus enim eos et, exercitationem fuga fugiat ipsam molestias
-                        officia pariatur quas quia vero, vitae.</p>
+                    <?php echo !empty($product["exceprt"]) ? $product["exceprt"] : "" ?>
                 </div>
             </div>
             <div class="section" id="same-category-wp">
