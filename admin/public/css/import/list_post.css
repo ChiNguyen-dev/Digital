@@ -99,8 +99,9 @@
     background-color: white;
     padding: 0px 15px;
 }
+
 .section--addition {
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 4px;
 }
 
@@ -342,6 +343,7 @@
 .filter-wp .post-status {
     flex-grow: 1;
 }
+
 .filter-wp .btn--space {
     margin-right: 8px;
     text-decoration: none;

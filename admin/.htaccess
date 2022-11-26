@@ -37,6 +37,9 @@ RewriteRule ^user/add$ index.php?mod=users&controllers=group&action=addGroup
 
 RewriteRule ^khach-hang.html$ index.php?mod=sales&controllers=guest&action=index
 
+RewriteRule ^ban-hang/don-hang-([a-zA-Z0-9_-]+).html$ index.php?mod=sales&controllers=detail&action=index&id=$1
+
+
 RewriteRule ^vai-tro.html$ index.php?mod=roles&controllers=index&action=index
 
 
