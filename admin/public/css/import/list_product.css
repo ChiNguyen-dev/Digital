@@ -1,7 +1,16 @@
 /*LIST PRODUCT*/
-.tbody-thumb{
-    width: 80px;
+.tbody-thumb {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100px;
     height: 80px;
     overflow: hidden;
 }
-.tbody-thumb img{ border: 1px solid #ddd;}
+
+.tbody-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd;
+}

@@ -64,25 +64,12 @@
                                 <?php foreach ($orders as $order) { ?>
                                     <tr>
                                         <th scope="row">
-                                            <span class="tbody-text">1</span></th>
-                                        <td><span class="tbody-text"><?php echo $order["order_id"]; ?></span>
+                                            <span class="tbody-text">1</span>
+                                        </th>
                                         <td>
-                                            <div class="tb-title fl-left">
-                                                <a href="" title=""><?php echo $order["fullname"]; ?></a>
-                                            </div>
-                                            <ul class="list-operation mb-0">
-                                                <li>
-                                                    <a href="" title="Sửa" class="edit">
-                                                        <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <button type="button" title="Xóa" id-user=""
-                                                            class="delete">
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </button>
-                                                </li>
-                                            </ul>
+                                            <span class="tbody-text"><?php echo $order["order_id"]; ?></span>
+                                        <td>
+                                            <span class="tbody-text"><?php echo $order["fullname"]; ?></span>
                                         </td>
                                         <td>
                                             <span class="tbody-text"><?php echo currency_format($order["total"]) ?></span>
@@ -93,9 +80,11 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <span class="tbody-text"><?php echo parse_date($order["created_date"]); ?></span>
+                                            <span class="tbody-text"><?php echo $order["created_date"]; ?></span>
                                         </td>
-                                        <td><a href="ban-hang/don-hang-<?php echo $order["id"] ?>.html">Chi tiết</a>
+                                        <td>
+                                            <a href="ban-hang/don-hang-<?php echo $order["user_id"] ?>.html">Chi
+                                                tiết</a>
                                         </td>
                                     </tr>
                                 <?php } ?>

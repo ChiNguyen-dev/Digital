@@ -22,6 +22,7 @@ function indexAction()
         empty($_POST["fullname"]) ? $error["fullname"] = "* Họ tên không được để trống" : $data["user"]["fullname"] = $_POST["fullname"];
         empty($_POST["phone"]) ? $error["phone"] = "* Số điện thoại không được để trống" : $data["user"]["phone_number"] = $_POST["phone"];
         if (empty($error)) {
+//            show_array($_SESSION["cart"]["buy"]);
             $data["user"]["isDelete"] = 0;
             $nickName = $_POST["nickName"] == 1 ? "anh" : "chị";
             $str_product = "";
@@ -52,6 +53,7 @@ function indexAction()
                             addOrderItem([
                                 "order_id" => $order["order_id"],
                                 "product_id" => $key,
+                                "color_name" => $item["color"],
                                 "quantity" => $item["quantity"],
                                 "payment_method" => $payment_method
                             ]);
@@ -63,7 +65,7 @@ function indexAction()
                         unset($_SESSION["cart"]);
                         redirect(base_url());
                     } else {
-                        echo "abc";
+                        echo "INSERT CLIENT FAIL";
                     }
                 } else {
                     echo "CHECKOUT FAIL";
