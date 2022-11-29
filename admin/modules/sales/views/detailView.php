@@ -84,23 +84,17 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="total">
+                    <div class="total__quantity">
+                        <p>Tổng số lượng:</p>
+                        <span><?php echo $totalQuantity; ?></span>
+                    </div>
+                    <div class="total__order">
+                        <p>Tổng đơn hàng:</p>
+                        <span><?php echo currency_format($totalOrder); ?></span>
+                    </div>
+                </div>
             </div>
-            <!--            <div class="section">-->
-            <!--                <h3 class="section-title">Giá trị đơn hàng</h3>-->
-            <!--                <div class="section-detail">-->
-            <!--                    <ul class="list-item clearfix">-->
-            <!--                        <li>-->
-            <!--                            <span class="total-fee">Tổng số lượng</span>-->
-            <!--                            <span class="total">Tổng đơn hàng</span>-->
-            <!--                        </li>-->
-            <!--                        <li>-->
-            <!--                            <span class="total-fee">5 sản phẩm</span>-->
-            <!--                            <span class="total">725,000 VNĐ</span>-->
-            <!--                        </li>-->
-            <!--                    </ul>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div>
     </div>
-</div>
 </div>

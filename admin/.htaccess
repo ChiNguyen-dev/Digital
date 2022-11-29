@@ -4,10 +4,7 @@ RewriteRule ^login$ index.php?mod=users&controllers=index&action=login
 
 RewriteRule ^logout index.php?mod=users&controllers=index&action=logout
 
-
 RewriteRule ^home.html$ index.php?mod=home&controllers=index&action=index
-
-
 
 RewriteRule ^pages/add$ index.php?mod=pages&controllers=index&action=add
 
@@ -21,11 +18,9 @@ RewriteRule ^san-pham/add.html$ index.php?mod=products&controllers=product&actio
 
 RewriteRule ^san-pham/edit-([0-9]+).html$ index.php?mod=products&controllers=product&action=update&id=$1
 
-
 RewriteRule ^danh-muc-san-pham.html$ index.php?mod=products&controllers=cate&action=cate
 
 RewriteRule ^danh-sach-mau.html$ index.php?mod=products&controllers=color&action=index
-
 
 RewriteRule ^user/edit-([0-9]+).html$ index.php?mod=users&controllers=group&action=updateGroup&id=$1
 
@@ -39,11 +34,9 @@ RewriteRule ^khach-hang.html$ index.php?mod=sales&controllers=guest&action=index
 
 RewriteRule ^ban-hang/don-hang-([a-zA-Z0-9_-]+).html$ index.php?mod=sales&controllers=detail&action=index&id=$1
 
+RewriteRule ^ban-hang/don-hang.html$ index.php?mod=sales&controllers=order&action=index
 
 RewriteRule ^vai-tro.html$ index.php?mod=roles&controllers=index&action=index
 
+RewriteRule ^slider.html$ index.php?mod=sliders
 
-
-
-
-RewriteRule ^console$ http://localhost:8080/ismart.com/admin/modules/console/console.php

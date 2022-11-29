@@ -6,21 +6,9 @@ $(document).ready(function () {
     let checked = [];
 
     //  CHECK ALL
-    $('input[name="checkAll"]').click(function () {
-        checked = [];
+    $('#checkAll').click(function () {
         let status = $(this).prop('checked');
         $('.table tbody tr td input[type="checkbox"]').prop("checked", status);
-        let checkbox = $("input[type='checkbox']:checked");
-        $.each(checkbox, function (index, value) {
-            if (index !== 0) {
-                checked.push(value.defaultValue);
-            }
-        });
-        $(".checked").val(checked);
-    });
-    $(".checkItem").click(function () {
-        checked.push(this.defaultValue);
-        let value = this.defaultValue;
     });
 
     $("#sidebar-menu").find(".dashboard-title").addClass("active-color");

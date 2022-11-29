@@ -4,3 +4,34 @@
     letter-spacing: 1px;
     font-weight: bold;
 }
+
+.detail-exhibition .section .total {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-exhibition .section .total .total__quantity,
+.detail-exhibition .section .total .total__order {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.detail-exhibition .section .total .total__quantity,
+.detail-exhibition .section .total .total__order {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.detail-exhibition .section .total .total__quantity p,
+.detail-exhibition .section .total .total__order p {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.detail-exhibition .section .total .total__quantity span,
+.detail-exhibition .section .total .total__order span {
+    color: red;
+}

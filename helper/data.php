@@ -9,6 +9,18 @@ function show_array($data)
     }
 }
 
+/*
+ *
+ */
+function products()
+{
+    $products = db_fetch_array("SELECT *
+                                FROM `product_image` as pi INNER JOIN `products` as p ON pi.product_id = p.product_id 
+                                WHERE p.isDelete = 0
+                                GROUP BY p.product_id");
+    return !empty($products) ? $products : null;
+}
+
 function menu($data, $parent_id, $class, $level = 0): string
 {
     $result = $level == 0 ? "<ul class='{$class}'>" : "<ul class='sub-menu'>";

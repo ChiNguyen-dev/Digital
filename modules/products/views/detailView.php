@@ -64,7 +64,7 @@
                         </div>
                         <div class="num-product">
                             <span class="title">Số lượng: </span>
-                            <span class="status"><?php echo $inventory != null ? $inventory["quantity"] : "" ?></span>
+                            <span class="status"><?php echo $inventory != null || isset($_SESSION["cart"]) ? $inventory["quantity"] : "" ?></span>
                         </div>
                         <div class="d-flex align-items-center pb-2">
                             <div id="num-order-wp">

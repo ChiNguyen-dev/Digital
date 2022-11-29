@@ -61,10 +61,10 @@
                             </thead>
                             <tbody>
                             <?php if ($orders != null) { ?>
-                                <?php foreach ($orders as $order) { ?>
+                                <?php foreach ($orders as $key => $order) { ?>
                                     <tr>
                                         <th scope="row">
-                                            <span class="tbody-text">1</span>
+                                            <span class="tbody-text"><?php echo $key + 1; ?></span>
                                         </th>
                                         <td>
                                             <span class="tbody-text"><?php echo $order["order_id"]; ?></span>

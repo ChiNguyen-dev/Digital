@@ -10,6 +10,12 @@ function indexAction()
     $data["user"] = findOne("users", "user_id", $id);
     $data["order"] = findOne("orders", "user_id", $id);
     $data["details"] = getOrderByUser($id);
+    $data["totalOrder"] = 0;
+    $data["totalQuantity"] = 0;
+    foreach ($data["details"] as $v) {
+        $data["totalOrder"] += $v["total"];
+        $data["totalQuantity"] += $v["quantity"];
+    }
 
     if (isset($_POST["btn-submit"])) {
         $order_id = $data["order"]["order_id"];

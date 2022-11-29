@@ -51,3 +51,4 @@ function sumProduct()
                         WHERE p.isDelete = 0
                         GROUP BY p.product_id");
 }
+

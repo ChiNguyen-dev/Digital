@@ -27,7 +27,6 @@ function addAction()
             "category_id" => $_POST["category"],
             "isDelete" => 0
         );
-
         if (empty($_POST["name"]) || empty($_POST["price"]) || empty($_POST["sku"]) || empty($_POST["desc"]) ||
             empty($_POST["category"]) || empty($_POST["color"]) || empty($_POST["quantity"]) ||
             empty($_FILES["images"]["name"]) || empty($_POST["detail"])) {
@@ -67,18 +66,23 @@ function updateAction()
 {
     $id = $_GET["id"];
     if (isset($_POST["btn-submit"])) {
-        $data_product = array(
+        $data["products"] = array(
             "p_name" => $_POST["name"],
             "price" => $_POST["price"],
             "sku" => $_POST["sku"],
+            "detail" => $_POST["detail"],
             "exceprt" => $_POST["desc"],
             "slug" => create_slug($_POST["name"]),
-            "user_id" => $_SESSION["isLogin"],
-            "category_id" => $_POST["category"],
-            "isDelete" => 0
+            "user_id" => $_SESSION["isLogin"]
         );
-        show_array($_FILES);
-//        show_array($_POST);
+        if (!empty($_POST["category"])) {
+            $data["products"]["category_id"] = $_POST["category"];
+        }
+        if (updateItemById("`products`", $data["products"], "`product_id` = '{$id}'")) {
+            redirect(base_url("san-pham.html"));
+        } else {
+            echo "Update fail";
+        }
     } else {
         $data["product"] = findOne("products", "product_id", $id);
         $data["categories"] = data_tree(findAll("categories"), 0);
@@ -94,7 +98,7 @@ function updateAction()
         $data["invenrory"] = findOne("inventories", "product_id", $id);
         $data["images"] = null;
         foreach (findAll("product_image", "`product_id`='$id'") as $image) {
-            $data["images"] .= $image["image"];
+            $data["images"] .= "<div class='thumnail'><img src='{$image["image"]}'></div>";
         }
         load_view("update", $data);
     }

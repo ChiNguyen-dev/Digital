@@ -1,7 +1,7 @@
 <?php
 function pagination($total_page, $page): string
 {
-    $result = '<ul class="pagination">';
+    $result = '<ul class="pagination mb-0">';
     if ($page > 1) {
         $p = $page - 1;
         $result .= "<li class='page-item'>

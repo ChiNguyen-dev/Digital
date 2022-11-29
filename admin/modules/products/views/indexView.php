@@ -8,7 +8,7 @@
                     <h3 id="index" class="fl-left">Danh sách sản phẩm</h3>
                     <form method="POST" class="form-s fl-right">
                         <input type="text" name="s" id="s">
-                        <input type="submit" name="sm_s" value="Tìm kiếm">
+                        <input type="submit" name="btn-search" value="Tìm kiếm">
                     </form>
                 </div>
             </div>
@@ -46,92 +46,89 @@
                     </div>
                     <div class="actions mt-3">
                         <form method="POST" action="" class="form-actions">
-                            <input type="hidden" name="checked" class="checked" value="">
                             <select name="actions">
-                                <option value="0">Tác vụ</option>
+                                <option value="">Tác vụ</option>
+                                <option value="0">Đang xử lý</option>
                                 <option value="1">Công khai</option>
                                 <option value="2">Bỏ vào thủng rác</option>
                             </select>
                             <input type="submit" name="btn-submit" id="handle-items" value="Áp dụng">
+                            <div class="table-responsive pt-3">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"><input type="checkbox" id="checkAll"></th>
+                                        <th scope="col"><span class="thead-text">STT</span></th>
+                                        <th scope="col"><span class="thead-text">Mã sản phẩm</span></th>
+                                        <th scope="col"><span class="thead-text">Hình ảnh</span></th>
+                                        <th scope="col"><span class="thead-text">Tên sản phẩm</span></th>
+                                        <th scope="col"><span class="thead-text">Giá</span></th>
+                                        <th scope="col"><span class="thead-text">Danh mục</span></th>
+                                        <th scope="col"><span class="thead-text">Trạng thái</span></th>
+                                        <th scope="col"><span class="thead-text">Số lượng</span></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php if ($products != null) { ?>
+                                        <?php foreach ($products as $key => $product) { ?>
+                                            <tr data-id="<?php echo $product["product_id"]; ?>">
+                                                <td>
+                                                    <input type="checkbox" name="checked[]" class="checkItem"
+                                                           value="<?php echo $product["product_id"]; ?>">
+                                                </td>
+                                                <th scope="row" class="text-center">
+                                                    <span class="tbody-text">  <?php echo $key + 1; ?></span>
+                                                </th>
+                                                <td><span class="tbody-text"> <?php echo $product["sku"]; ?></span></td>
+                                                <td>
+                                                    <div class="tbody-thumb">
+                                                        <img src="<?php echo $product["image"]; ?>" alt="">
+                                                    </div>
+                                                </td>
+                                                <td class="clearfix">
+                                                    <div class="tb-title fl-left">
+                                                        <a href="" title=""><?php echo $product["p_name"]; ?></a>
+                                                    </div>
+                                                    <ul class="list-operation fl-right mb-0">
+                                                        <li>
+                                                            <a href="san-pham/edit-<?php echo $product["product_id"]; ?>.html"
+                                                               title="Sửa" class="edit">
+                                                                <i class="fa-regular fa-pen-to-square"
+                                                                   aria-hidden="true"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <span class="tbody-text"><?php echo currency_format($product["price"]); ?></span>
+                                                </td>
+                                                <td>
+                                                    <span class="tbody-text"><?php echo $product["cate_name"]; ?></span>
+                                                </td>
+                                                <td>
+                                                    <span class="tbody-text <?php echo $product["status"] == 0 ? 'confirm' : 'complete' ?>">
+                                                         <?php echo $product["status"] == 0 ? 'Chờ duyệt' : 'Công khai' ?>
+                                                    </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="tbody-text"><?php echo $product["quantity"]; ?></span>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </form>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col"><input type="checkbox" name="checkAll" id="checkAll"></th>
-                                <th scope="col"><span class="thead-text">STT</span></th>
-                                <th scope="col"><span class="thead-text">Mã sản phẩm</span></th>
-                                <th scope="col"><span class="thead-text">Hình ảnh</span></th>
-                                <th scope="col"><span class="thead-text">Tên sản phẩm</span></th>
-                                <th scope="col"><span class="thead-text">Giá</span></th>
-                                <th scope="col"><span class="thead-text">Danh mục</span></th>
-                                <th scope="col"><span class="thead-text">Trạng thái</span></th>
-                                <th scope="col"><span class="thead-text">Số lượng</span></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php if ($products != null) { ?>
-                                <?php foreach ($products as $key => $product) { ?>
-                                    <tr data-id="<?php echo $product["product_id"]; ?>">
-                                        <td>
-                                            <input type="checkbox" name="checkItem" class="checkItem"
-                                                   value="<?php echo $product["product_id"]; ?>">
-                                        </td>
-                                        <th scope="row" class="text-center">
-                                            <span class="tbody-text">
-                                              <?php echo $product["product_id"]; ?>
-                                            </span>
-                                        <td>
-                                            <span class="tbody-text">
-                                                <?php echo $product["sku"]; ?>
-                                            </span>
-                                        <td>
-                                            <div class="tbody-thumb">
-                                                <img src="<?php echo $product["image"]; ?>" alt="">
-                                            </div>
-                                        </td>
-                                        <td class="clearfix">
-                                            <div class="tb-title fl-left">
-                                                <a href="" title=""><?php echo $product["p_name"]; ?></a>
-                                            </div>
-                                            <ul class="list-operation fl-right mb-0">
-                                                <li>
-                                                    <a href="san-pham/edit-<?php echo $product["product_id"]; ?>.html"
-                                                       title="Sửa" class="edit">
-                                                        <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <span class="tbody-text"><?php echo currency_format($product["price"]); ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="tbody-text"><?php echo $product["cate_name"]; ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="tbody-text <?php echo $product["status"] == 0 ? 'confirm' : 'complete' ?> confirm">
-                                                <?php echo $product["status"] == 0 ? 'Chờ duyệt' : 'Công khai' ?>
-                                            </span>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="tbody-text"><?php echo $product["quantity"]; ?></span>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            <?php } ?>
-                            </tbody>
-                        </table>
+                    <div id="paging-wp">
+                        <div class="d-flex justify-content-between align-items-center clearfix">
+                            <p id="desc" class="flex-grow-1 mb-0">Chọn vào checkbox để lựa chọn tất cả</p>
+                            <nav aria-label="...">
+                                <?php echo pagination($total_page, $page) ?>
+                            </nav>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section pt-3" id="paging-wp">
-                <div class="section-detail d-flex justify-content-between clearfix">
-                    <p id="desc" class="flex-grow-1">Chọn vào checkbox để lựa chọn tất cả</p>
-                    <nav aria-label="...">
-                        <?php echo pagination($total_page, $page) ?>
-                    </nav>
                 </div>
             </div>
         </div>

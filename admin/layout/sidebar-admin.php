@@ -1,4 +1,4 @@
-<?php $roles = getAllRole(); ?>
+<?php $roles = getAllRole();?>
 <div id="sidebar" class="fl-sleft">
     <ul id="sidebar-menu">
         <li class="nav-item">
@@ -93,7 +93,7 @@
                     </li>
                 <?php } ?>
                 <li class="nav-item">
-                    <a href="?page=list_slider" title="" class="nav-link">Danh sách slider</a>
+                    <a href="slider.html" title="" class="nav-link">Danh sách slider</a>
                 </li>
             </ul>
         </li>
@@ -105,7 +105,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item">
-                        <a href="sales/danh-sach-don-hang.html" title="" class="nav-link">Danh sách đơn hàng</a>
+                        <a href="ban-hang/don-hang.html" title="" class="nav-link">Danh sách đơn hàng</a>
                     </li>
                     <li class="nav-item">
                         <a href="khach-hang.html" title="" class="nav-link">Danh sách khách hàng</a>

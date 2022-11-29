@@ -6,6 +6,7 @@ function construct()
 
 function addAction()
 {
+    $inventory = findOne("inventories", "product_id", $_POST["product_id"]);
     $product = findOne("products", "product_id", $_POST["product_id"]);
     $images = findAll("product_image", "`product_id`='{$_POST["product_id"]}'");
     $color = findOne("colors", "color_id", $_POST["color_id"]);
@@ -15,6 +16,9 @@ function addAction()
 
     if (isset($_SESSION["cart"]) && array_key_exists($_POST["product_id"], $_SESSION["cart"]["buy"])) {
         $quantity = $_SESSION["cart"]["buy"][$_POST["product_id"]]["quantity"] + $resQuantity;
+        if ($quantity > $inventory["quantity"]) {
+            $quantity = $inventory["quantity"];
+        }
     }
     $_SESSION["cart"]["buy"][$_POST["product_id"]] = array(
         "id" => $product["product_id"],

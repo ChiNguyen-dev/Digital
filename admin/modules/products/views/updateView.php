@@ -14,19 +14,19 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="form-group">
-                                    <label for="name">Tên sản pẩm</label>
+                                    <label for="name">Tên sản phẩm:</label>
                                     <input type="text" class="form-control" id="name" name="name"
                                            value="<?php echo !empty($product["p_name"]) ? $product["p_name"] : '' ?>"
                                            aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
-                                    <label for="sku">Mã sản phẩm</label>
+                                    <label for="sku">Mã sản phẩm:</label>
                                     <input type="text" class="form-control" id="sku" name="sku"
                                            value="<?php echo !empty($product["sku"]) ? $product["sku"] : '' ?>"
                                            aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
-                                    <label for="price">Giá</label>
+                                    <label for="price">Giá:</label>
                                     <input type="text" class="form-control" id="price" name="price"
                                            value="<?php echo !empty($product["price"]) ? $product["price"] : '' ?>"
                                            aria-describedby="emailHelp">
@@ -34,7 +34,7 @@
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group">
-                                    <label>Danh mục sản phẩm</label>
+                                    <label>Danh mục sản phẩm:</label>
                                     <select name="category" class="form-control">
                                         <option value="">-- Chọn danh mục --</option>
                                         <?php if ($categories != null) { ?>
@@ -47,7 +47,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Màu sắc</label>
+                                    <label>Màu sắc:</label>
                                     <select name="color[]" class="select-roles js-multiple form-control"
                                             multiple="multiple">
                                         <?php if ($active_colors != null) { ?>
@@ -67,7 +67,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="quantity">Số lượng</label>
+                                    <label for="quantity">Số lượng:</label>
                                     <input type="number" id="quantity" name="quantity" min="1" max="999"
                                            value="<?php echo !empty($invenrory["quantity"]) ? $invenrory["quantity"] : '' ?>"
                                            class="form-control">
@@ -76,7 +76,12 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="desc">Mô tả</label>
+                            <label for="detail">Chi tiết:</label>
+                            <textarea class="ckeditor" id="detail" name="detail"
+                                      placeholder="Mô tả sản phẩm"><?php echo !empty($product["detail"]) ? $product["detail"] : '' ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Mô tả:</label>
                             <textarea class="ckeditor" id="desc" name="desc"
                                       placeholder="Mô tả sản phẩm"><?php echo !empty($product["exceprt"]) ? $product["exceprt"] : '' ?></textarea>
                             <script>
@@ -94,12 +99,14 @@
                                 <i class="fa-solid fa-upload"></i> upload file
                             </button>
                         </div>
-                        <div id="result"></div>
+                        <div id="result">
+                            <?php if (!empty($images)) echo $images; ?>
+                        </div>
                         <button type="submit"
                                 name="btn-submit"
                                 class="btn btn-primary"
                                 id="btn-submit">
-                            Thêm mới
+                            Cập nhật
                         </button>
                     </form>
                 </div>

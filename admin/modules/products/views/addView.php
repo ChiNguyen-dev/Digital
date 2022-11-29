@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="desc">Chi tiết</label>
+                                <label for="detail">Chi tiết</label>
                                 <textarea class="form-control ckeditor"
                                           id="detail"
                                           name="detail"
