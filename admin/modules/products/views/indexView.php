@@ -42,22 +42,28 @@
                                 </a>
                             </li>
                         </ul>
-                        <a href="san-pham/add.html" class="btn btn-primary btn--space">Thêm</a>
+                        <?php if ($isRole) { ?>
+                            <a href="san-pham/add.html" class="btn btn-primary btn--space">Thêm</a>
+                        <?php } ?>
                     </div>
                     <div class="actions mt-3">
                         <form method="POST" action="" class="form-actions">
-                            <select name="actions">
-                                <option value="">Tác vụ</option>
-                                <option value="0">Đang xử lý</option>
-                                <option value="1">Công khai</option>
-                                <option value="2">Bỏ vào thủng rác</option>
-                            </select>
-                            <input type="submit" name="btn-submit" id="handle-items" value="Áp dụng">
+                            <?php if ($isRole) { ?>
+                                <select name="actions">
+                                    <option value="">Tác vụ</option>
+                                    <option value="0">Đang xử lý</option>
+                                    <option value="1">Công khai</option>
+                                    <option value="2">Bỏ vào thủng rác</option>
+                                </select>
+                                <input type="submit" name="btn-submit" id="handle-items" value="Áp dụng">
+                            <?php } ?>
                             <div class="table-responsive pt-3">
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th scope="col"><input type="checkbox" id="checkAll"></th>
+                                        <?php if ($isRole) { ?>
+                                            <th scope="col"><input type="checkbox" id="checkAll"></th>
+                                        <?php } ?>
                                         <th scope="col"><span class="thead-text">STT</span></th>
                                         <th scope="col"><span class="thead-text">Mã sản phẩm</span></th>
                                         <th scope="col"><span class="thead-text">Hình ảnh</span></th>
@@ -72,10 +78,11 @@
                                     <?php if ($products != null) { ?>
                                         <?php foreach ($products as $key => $product) { ?>
                                             <tr data-id="<?php echo $product["product_id"]; ?>">
-                                                <td>
-                                                    <input type="checkbox" name="checked[]" class="checkItem"
-                                                           value="<?php echo $product["product_id"]; ?>">
-                                                </td>
+                                                <?php if ($isRole) { ?>
+                                                    <td>
+                                                        <input type="checkbox" name="checked[]" class="checkItem" value="<?php echo $product["product_id"]; ?>">
+                                                    </td>
+                                                <?php } ?>
                                                 <th scope="row" class="text-center">
                                                     <span class="tbody-text">  <?php echo $key + 1; ?></span>
                                                 </th>
@@ -89,15 +96,17 @@
                                                     <div class="tb-title fl-left">
                                                         <a href="" title=""><?php echo $product["p_name"]; ?></a>
                                                     </div>
-                                                    <ul class="list-operation fl-right mb-0">
-                                                        <li>
-                                                            <a href="san-pham/edit-<?php echo $product["product_id"]; ?>.html"
-                                                               title="Sửa" class="edit">
-                                                                <i class="fa-regular fa-pen-to-square"
-                                                                   aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <?php if ($isRole) { ?>
+                                                        <ul class="list-operation fl-right mb-0">
+                                                            <li>
+                                                                <a href="san-pham/edit-<?php echo $product["product_id"]; ?>.html"
+                                                                   title="Sửa" class="edit">
+                                                                    <i class="fa-regular fa-pen-to-square"
+                                                                       aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    <?php } ?>
                                                 </td>
                                                 <td>
                                                     <span class="tbody-text"><?php echo currency_format($product["price"]); ?></span>

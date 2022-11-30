@@ -8,6 +8,7 @@ function construct()
 function indexAction()
 {
     $data["products"] = getItemPhone();
+    $data["sliders"] = findAll("sliders", "`status` != 2");
     load_view('index', $data);
 }
 

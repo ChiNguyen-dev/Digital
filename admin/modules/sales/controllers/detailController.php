@@ -29,6 +29,10 @@ function indexAction()
             redirect(base_url("home.html"));
         }
     } else {
+        $data["isRole"] = false;
+        if (checkRole(getAllRole(), ["Admin", "Content"])) {
+            $data["isRole"] = true;
+        }
         load_view("detail", $data);
     }
 }

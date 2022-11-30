@@ -4,27 +4,29 @@
             <?php get_sidebar("admin"); ?>
             <div id="content" class="container-fluid mr-0">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="card">
-                            <div class="card-header font-weight-bold">
-                                Thêm màu mới
-                            </div>
-                            <div class="card-body">
-                                <form method="post">
-                                    <div class="form-group">
-                                        <label for="name">Tên màu</label>
-                                        <input class="form-control" type="text" name="name" id="name" value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="favcolor">Chọn màu</label>
-                                        <input type="color" class="form-control" id="favcolor" name="favcolor"
-                                               value="#ff0000">
-                                    </div>
-                                    <button type="button" class="btn btn-primary" id="add-color">Thêm mới</button>
-                                </form>
+                    <?php if ($isRole) { ?>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header font-weight-bold">
+                                    Thêm màu mới
+                                </div>
+                                <div class="card-body">
+                                    <form method="post">
+                                        <div class="form-group">
+                                            <label for="name">Tên màu</label>
+                                            <input class="form-control" type="text" name="name" id="name" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="favcolor">Chọn màu</label>
+                                            <input type="color" class="form-control" id="favcolor" name="favcolor"
+                                                   value="#ff0000">
+                                        </div>
+                                        <button type="button" class="btn btn-primary" id="add-color">Thêm mới</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
                     <div class="col-8">
                         <div class="card">
                             <div class="card-header font-weight-bold">
@@ -56,7 +58,7 @@
                                                 </td>
                                                 <td><span class="status-color"
                                                           style="<?php echo $color['active'] == 0 ? "color: #636e72" : 'color: #009432'; ?>"><i
-                                                          class="fa-solid fa-circle-check"></i>
+                                                                class="fa-solid fa-circle-check"></i>
                                                     </span>
                                                 </td>
                                                 <td>

@@ -7,6 +7,9 @@ function construct()
 function indexAction()
 {
     $data["colors"] = findAll("colors");
+    $data["isRole"] = false;
+    if (checkRole(getAllRole(), ["Admin", "Content"])) $data["isRole"] = true;
+
     if ($data["colors"] != null) {
         load_view("color", $data);
     } else {

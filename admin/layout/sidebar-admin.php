@@ -46,22 +46,6 @@
         <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
                 <i class="fa-regular fa-folder icon"></i>
-                <span class="title">Trang</span>
-            </a>
-            <ul class="sub-menu">
-                <?php if (checkRole($roles, ["Admin", "Content"])) { ?>
-                    <li class="nav-item">
-                        <a href="pages/add" title="" class="nav-link">Thêm mới</a>
-                    </li>
-                <?php } ?>
-                <li class="nav-item">
-                    <a href="pages/danh-sach-trang" title="" class="nav-link">Danh sách các trang</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="" title="" class="nav-link nav-toggle">
-                <i class="fa-regular fa-folder icon"></i>
                 <span class="title">Sản phẩm</span>
             </a>
             <ul class="sub-menu">
@@ -87,11 +71,6 @@
                 <span class="title">Slider</span>
             </a>
             <ul class="sub-menu">
-                <?php if (checkRole($roles, ["Admin", "Content"])) { ?>
-                    <li class="nav-item">
-                        <a href="?page=add_slider" title="" class="nav-link">Thêm mới</a>
-                    </li>
-                <?php } ?>
                 <li class="nav-item">
                     <a href="slider.html" title="" class="nav-link">Danh sách slider</a>
                 </li>

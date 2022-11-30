@@ -29,6 +29,10 @@ function indexAction()
         }
         redirect(base_url("san-pham.html"));
     } else {
+        $data["isRole"] = false;
+        if (checkRole(getAllRole(), ["Admin", "Content"])) {
+            $data["isRole"] = true;
+        }
         load_view("index", $data);
     }
 }

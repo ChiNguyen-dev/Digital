@@ -18,6 +18,9 @@ function cateAction()
      */
     $categories = findAll("categories");
     if ($categories != null) {
+        $data["isRole"] = false;
+        if (checkRole(getAllRole(), ["Admin", "Content"])) $data["isRole"] = true;
+
         $data["categories"] = data_tree($categories, 0);
         load_view("cate", $data);
     } else {

@@ -315,6 +315,7 @@ $(document).ready(function () {
         });
     });
 
+
     $("#upload_multi").on("click", '.btn-upload', function () {
         let inputFile = $('#file');
         let fileToUpload = inputFile[0].files;

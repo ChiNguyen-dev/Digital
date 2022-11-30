@@ -5,21 +5,13 @@
         <div class="main-content">
             <div class="section" id="slider-wp">
                 <div class="section-detail">
-                    <div class="item">
-                        <img src="public/images/slideshow_1.webp" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="public/images/slideshow_2.webp" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="public/images/slideshow_5.webp" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="public/images/slideshow_15.webp" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="public/images/slideshow_8.webp" alt="">
-                    </div>
+                    <?php if ($sliders != null) { ?>
+                        <?php foreach ($sliders as $slider) { ?>
+                            <div class="item">
+                                <img src="admin/<?php echo $slider["image"]; ?>" alt="<?php echo $slider["image"]; ?>">
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
             <div class="section" id="support-wp">
@@ -180,8 +172,8 @@
                                             </div>
                                             <div class="action clearfix">
                                                 <button title="Thêm giỏ hàng" class="add-cart add-cart--home"
-                                                        data-id="<?php echo $product["product_id"]?>"
-                                                        data-color="<?php echo $product["color_id"]?>">Thêm giỏ hàng
+                                                        data-id="<?php echo $product["product_id"] ?>"
+                                                        data-color="<?php echo $product["color_id"] ?>">Thêm giỏ hàng
                                                 </button>
                                                 <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua
                                                     ngay</a>

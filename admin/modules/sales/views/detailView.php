@@ -27,13 +27,15 @@
                         <p><?php echo $details[0]["payment_method"]; ?></p>
                     </div>
                     <div class="pl-5 d-flex align-items-center">
-                        <select name="actions" class="p-2 mr-2">
-                            <option value="0">Tác vụ</option>
-                            <option value="1">Công khai</option>
-                            <option value="2">Bỏ vào thủng rác</option>
-                        </select>
-                        <input type="submit" class="btn btn-primary" name="btn-submit" id="handle-items"
-                               value="Áp dụng">
+                        <?php if ($isRole) { ?>
+                            <select name="actions" class="p-2 mr-2">
+                                <option value="0">Tác vụ</option>
+                                <option value="1">Công khai</option>
+                                <option value="2">Bỏ vào thủng rác</option>
+                            </select>
+                            <input type="submit" class="btn btn-primary" name="btn-submit" id="handle-items"
+                                   value="Áp dụng">
+                        <?php } ?>
                     </div>
                 </form>
             </div>
