@@ -1,27 +1,31 @@
 $(document).ready(function () {
-//  SLIDER
-    let slider = $('#slider-wp .section-detail');
-    slider.owlCarousel({
-        autoPlay: 4500,
-        navigation: false,
-        navigationText: false,
-        paginationNumbers: false,
-        pagination: true,
-        items: 1, //10 items above 1000px browser width
-        itemsDesktop: [1000, 1], //5 items between 1000px and 901px
-        itemsDesktopSmall: [900, 1], // betweem 900px and 601px
-        itemsTablet: [600, 1], //2 items between 600 and 0
-        itemsMobile: true // itemsMobile disabled - inherit from itemsTablet option
+    //SEARCH
+    $(".box-search__icon").click(function () {
+        $(".box-search").toggleClass("active");
+    });
+    $(".clear").click(function () {
+        $(".input__search").val("");
+        $(".box-search").toggleClass("active");
     });
 
-//  ZOOM PRODUCT DETAIL
-    const zoom = $("#zoom");
-    const thumbnail = $(".thumbnail__image");
-    thumbnail.click(function () {
-        let image = $(this).attr("src");
-        zoom.attr("src", image);
+//  SLIDER
+    let slider = $('#slider-wp');
+    slider.owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        lazyLoad: true,
+        autoplay: true,
+        autoplayTimeout: 5000
     });
-    zoom.imagezoomsl({
+
+
+//  ZOOM PRODUCT DETAIL
+    $(".thumbnail__image").click(function () {
+        let image = $(this).attr("src");
+        $("#zoom").attr("src", image);
+    });
+    $("#zoom").imagezoomsl({
         zoomrange: [3, 3]
     });
 
@@ -29,32 +33,17 @@ $(document).ready(function () {
 //  LIST THUMB
     let list_thumb = $('#list-thumb');
     list_thumb.owlCarousel({
-        navigation: true,
-        navigationText: false,
-        paginationNumbers: false,
-        pagination: false,
-        stopOnHover: true,
         items: 5, //10 items above 1000px browser width
-        itemsDesktop: [1000, 5], //5 items between 1000px and 901px
-        itemsDesktopSmall: [900, 5], // betweem 900px and 601px
-        itemsTablet: [768, 5], //2 items between 600 and 0
-        itemsMobile: true // itemsMobile disabled - inherit from itemsTablet option
     });
 
 //  FEATURE PRODUCT
-    let feature_product = $('#feature-product-wp .list-item');
+    let feature_product = $('#feature-product-wp .owl-carousel');
     feature_product.owlCarousel({
-        autoPlay: true,
-        navigation: true,
-        navigationText: false,
-        paginationNumbers: false,
-        pagination: false,
-        stopOnHover: true,
-        items: 4, //10 items above 1000px browser width
-        itemsDesktop: [1000, 4], //5 items between 1000px and 901px
-        itemsDesktopSmall: [800, 3], // betweem 900px and 601px
-        itemsTablet: [600, 2], //2 items between 600 and 0
-        itemsMobile: [375, 1] // itemsMobile disabled - inherit from itemsTablet option
+        items: 1,
+        loop: true,
+        lazyLoad: true,
+        autoplay: true,
+        autoplayTimeout: 5000
     });
 
 //  SAME CATEGORY
@@ -75,7 +64,7 @@ $(document).ready(function () {
 
 //  SCROLL TOP
     $(window).scroll(function () {
-        if ($(this).scrollTop() != 0) {
+        if ($(this).scrollTop() !== 0) {
             $('#btn-top').stop().fadeIn(150);
         } else {
             $('#btn-top').stop().fadeOut(150);
@@ -86,27 +75,27 @@ $(document).ready(function () {
     });
 
 // CHOOSE NUMBER ITEM
-    let value = parseInt($('#num-order').attr('data-quantity'));
-    let price = parseInt($('#num-order').attr('data-price'));
+    const qty = $(".quantity");
+    const quantity = parseInt(qty.attr('data-quantity'));
+    const price = parseInt(qty.attr('data-price'));
+    const newPrice = $(".price-item");
     let total = 0;
     let count = 1;
-    $('#plus').click(function () {
-        if (value > 0 && count < value) {
-            count++;
-        }
-        $('#num-order').attr('value', count);
+    $('.plus').click(function () {
+        if (quantity > 0 && count < quantity) count++;
+        qty.attr('value', count < 10 ? "0" + count : count);
         total = price * count;
         let current = new Intl.NumberFormat("en-VN").format(total);
-        $(".price-item").text(current + "đ")
+        newPrice.text(current + "đ")
     });
-    $('#minus').click(function () {
+    $('.minus').click(function () {
         if (count > 1) {
             count--;
-            $('#num-order').attr('value', count);
+            qty.attr('value', count < 10 ? "0" + count : count);
             if (total >= price) {
                 total = total - price;
                 let current = new Intl.NumberFormat("en-VN").format(total);
-                $(".price-item").text(current + "đ")
+                newPrice.text(current + "đ")
             }
         }
     });
@@ -261,6 +250,7 @@ $(document).ready(function () {
 
 //  MAIN MENU
     $('#category-product-wp .list-item > li').find('.sub-menu').after('<i class="fa fa-angle-right arrow" aria-hidden="true"></i>');
+    $('.list-megamenu__item .sub-menu > li').find('.sub-menu').after('<i class="fa fa-angle-right arrow" aria-hidden="true"></i>');
 
 //  TAB
     tab();

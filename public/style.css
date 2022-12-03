@@ -1,5 +1,6 @@
 /*STYLE*/
-@import '../public/css/import/fonts.css';
+/*@import '../public/css/import/fonts.css';*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap');
 @import '../public/css/import/global.css';
 @import '../public/css/import/header.css';
 @import '../public/css/import/footer.css';
@@ -10,3 +11,4 @@
 @import '../public/css/import/detail_blog.css';
 @import '../public/css/import/cart.css';
 @import '../public/css/import/checkout.css';
+@import '../public/css/import/productAll.css';

@@ -5,6 +5,8 @@ RewriteEngine On
 
 RewriteRule ^san-pham/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=products&controllers=detail&action=detail&id=$2
 
+RewriteRule ^san-pham/([a-zA-Z0-9_-]+)$ index.php?mod=products&controllers=index&action=index&slug=$1
+
 RewriteRule ^cart/deleteAll$ index.php?mod=carts&controllers=delete&action=deleteAll
 
 RewriteRule ^cart/delete-([0-9]+)$ index.php?mod=carts&controllers=delete&action=delete&id=$1

@@ -12,12 +12,12 @@ function construct()
 function indexAction()
 {
     $total_row = sumProduct();
-    $total_pages = ceil($total_row / 3);
+    $total_pages = ceil($total_row / 8);
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-    $start = ($page - 1) * 3;
+    $start = ($page - 1) * 8;
     $data["page"] = $page;
     $data["total_page"] = $total_pages;
-    $data["products"] = getProductAll($start, 3);
+    $data["products"] = getProductAll($start, 8);
     $data["confirms"] = findAll("products", "`status`   = '0'");
     $data["accept"] = findAll("products", "`status`   = '1'");
     $data["deletes"] = findAll("products", "`isDelete` = '1'");

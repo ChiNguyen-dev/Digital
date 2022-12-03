@@ -1,0 +1,48 @@
+.list-item {
+    margin-bottom: 0;
+}
+
+.list-item .item .item-thum {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.list-item .item .item-thum img {
+    width: 100%;
+    height: 130px;
+    display: block;
+}
+
+.list-item .item .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.list-item .item .price p {
+    margin-bottom: 0;
+
+}
+
+.list-item .item .price .price__new {
+    color: #f12a43;
+    font-size: 15px;
+    font-weight: normal;
+    margin-right: 3px;
+}
+
+.list-item .item .item-name {
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-align: center;
+    color: #222;
+    margin: 15px 0px 5px 0px;
+    height: 35px;
+    line-height: 18px;
+    overflow: hidden;
+}
+.sidebar-category {
+    width: 100%;
+}

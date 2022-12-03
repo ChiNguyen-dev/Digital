@@ -5,7 +5,8 @@
                 <div class="info-company__logo">
                     <img src="public/images/footer-logo.png" alt="">
                 </div>
-                <p class="desc">DIGITAL luôn cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu
+                <p class="desc">DIGITAL luôn cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính
+                    sách ưu
                     đãi
                     cực lớn cho khách hàng có thẻ thành viên.</p>
                 <div id="payment">
@@ -30,7 +31,7 @@
             </div>
             <div class="block menu-ft policy" id="info-shop">
                 <h3 class="title">Chính sách mua hàng</h3>
-                <ul class="list-item">
+                <ul class="list-item mb-0">
                     <li>
                         <a href="" title="">Quy định - chính sách</a>
                     </li>
@@ -50,7 +51,7 @@
                 <p class="desc">Đăng ký với chung tôi để nhận được thông tin ưu đãi sớm nhất</p>
                 <div id="form-reg">
                     <form method="POST" action="">
-                        <input type="email" name="email" id="email" placeholder="Nhập email tại đây">
+                        <input type="email" name="email" id="email" placeholder="Nhập mail tại đây">
                         <button type="submit" id="sm-reg">Đăng ký</button>
                     </form>
                 </div>
@@ -63,7 +64,6 @@
             <p id="copyright" class="mb-0">© Bản quyền thuộc về chinguyen-dev | Php Master</p>
         </div>
     </div>
-</div>
 </div>
 <div id="menu-respon">
     <a href="?page=home" title="" class="logo">VSHOP</a>
@@ -116,6 +116,7 @@
     <i class="fa-solid fa-angle-up"></i>
 </div>
 <div id="fb-root"></div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -128,7 +129,8 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
 <script src="public/js/zoomsl.min.js"></script>
-<script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
+<script src="public/carousel/dist/owl.carousel.min.js"
+        type="text/javascript"></script>
 <script src="public/js/main.js" type="text/javascript"></script>
 <!--<script>(function (d, s, id) {-->
 <!--        let js, fjs = d.getElementsByTagName(s)[0];-->

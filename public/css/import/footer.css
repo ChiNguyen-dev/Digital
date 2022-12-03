@@ -15,7 +15,6 @@
 
 #info-company .title {
     font-size: 28px;
-    font-family: 'Roboto Medium';
     font-weight: normal;
     color: #da1818;
     text-transform: uppercase;
@@ -23,11 +22,18 @@
 }
 
 
-#info-company .desc, #newfeed .desc {
-    font-family: 'Roboto Light';
-    text-align: justify;
+#info-company .desc {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
     color: #6d6d6d;
     margin-bottom: 25px;
+}
+
+#newfeed .desc {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
 }
 
 #info-company .info-company__logo {
@@ -58,8 +64,10 @@
 .menu-ft .list-item li p {
     position: relative;
     color: #000;
-    font-family: 'Roboto Light';
     padding-left: 25px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
 }
 
 .menu-ft .list-item li:nth-child(1) p:before, .menu-ft .list-item li:nth-child(2) p:before, .menu-ft .list-item li:nth-child(3) p:before {
@@ -84,8 +92,11 @@
 #info-shop .list-item li a {
     position: relative;
     color: #000;
-    font-family: 'Roboto Light';
     padding-left: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-bottom: 25px;
 }
 
 #info-shop .list-item li a:before {
@@ -102,10 +113,12 @@
 
 #form-reg #email {
     display: block;
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     padding: 6px 10px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
+    font-weight: 400;
 }
 
 #form-reg #sm-reg {
@@ -117,7 +130,6 @@
     padding: 10px 0px;
     text-transform: uppercase;
     color: white;
-    font-family: 'Roboto Medium';
     line-height: normal;
     transition: all 0.3s;
 
@@ -129,28 +141,10 @@
     transition: all 0.3s;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #999;
-    font-family: 'Roboto Light';
-    font-size: 13px;
-}
-
-::-moz-placeholder { /* Firefox 19+ */
-    color: #999;
-    font-family: 'Roboto Light';
-    font-size: 13px;
-}
-
-:-ms-input-placeholder { /* IE 10+ */
-    color: #999;
-    font-family: 'Roboto Light';
-    font-size: 13px;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-    color: #999;
-    font-family: 'Roboto Light';
-    font-size: 13px;
+input::placeholder {
+    opacity: 0.7;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
 }
 
 #foot-bot {
@@ -162,5 +156,6 @@
 #foot-bot #copyright {
     color: #fff;
     line-height: normal;
-    font-family: 'Roboto Light';
+    font-weight: 300;
+    font-size: 15px;
 }

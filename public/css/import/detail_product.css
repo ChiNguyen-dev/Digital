@@ -44,9 +44,8 @@
     padding: 15px;
 }
 
-#main-thumb img,
 #detail-product-wp .owl-carousel .owl-item img {
-    border: 1px solid #d9d9d9;
+    border: 1px solid #5a4bde;
 }
 
 #main-thumb {
@@ -160,62 +159,57 @@
 
 #detail-product-wp .info .num-product {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 #detail-product-wp .info .num-product .title {
-    color: #666
+    color: #666;
+    font-size: 17px;
+    padding-right: 10px;
 }
 
 #detail-product-wp .info .num-product .status {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #ddd;
     padding: 0px 10px;
 }
 
 #detail-product-wp .info .price {
     font-size: 28px;
-    font-family: 'Roboto Medium';
+    font-weight: 500;
     color: #f12a43;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #num-order-wp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 50px;
-    margin-bottom: 20px;
 }
 
-#num-order {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+#num-order-wp button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: #5a4bde;
+    color: white;
+}
+
+#num-order-wp input {
+    padding: 4px 10px;
+    border: none;
+    margin: 0px 3px;
+    width: 100%;
+    max-width: 50px;
     text-align: center;
-    border: 1px solid #b1b1b1;
-    font-family: "Roboto Regular";
-    color: #545454;
+    font-size: 18px;
+    font-weight: 400;
 }
 
-#minus, #plus {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border: 1px solid #a0a0a0;
-    font-family: "Roboto Regular";
-    color: #515151;
-    font-size: 10px;
-    cursor: pointer;
-}
-
-#minus:hover {
-    color: #3a9800;
-    border: 1px solid #3a9800;
-}
-
-#plus:hover {
-    color: #F00;
-    border: 1px solid #F00;
-}
 
 #detail-product-wp .add-cart,
 #detail-product-wp .buy-now {
@@ -231,6 +225,7 @@
     border: none;
     background: #ffca0d;
     color: #000;
+    margin-right: 15px;
     transition: all 0.3s linear;
 }
 

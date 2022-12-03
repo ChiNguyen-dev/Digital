@@ -27,7 +27,7 @@ function addAction()
             "category_id" => $_POST["category"],
             "isDelete" => 0
         );
-        if (empty($_POST["name"]) || empty($_POST["price"]) || empty($_POST["sku"]) || empty($_POST["desc"]) ||
+        if (empty($_POST["name"]) || empty($_POST["price"]) || empty($_POST["sku"]) ||
             empty($_POST["category"]) || empty($_POST["color"]) || empty($_POST["quantity"]) ||
             empty($_FILES["images"]["name"]) || empty($_POST["detail"])) {
             $data["products"]["quantity"] = $_POST["quantity"];

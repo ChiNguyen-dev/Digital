@@ -9,6 +9,7 @@
 #breadcrumb-wp .list-item {
     display: flex;
     align-items: center;
+    margin-bottom: 0;
 }
 
 #breadcrumb-wp .list-item li a {

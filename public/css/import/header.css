@@ -85,107 +85,219 @@
 #head-body #logo {
     display: block;
     text-transform: uppercase;
-    font-family: 'Roboto Medium';
     color: #fff;
     padding: 30px 0px;
-    width: 200px;
+    width: 250px;
 }
+
+#head-body .nav-megamenu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#head-body .nav-megamenu .list-megamenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#head-body .nav-megamenu .list-megamenu li.list-megamenu__item {
+    height: 100%;
+    position: relative;
+
+}
+
+#head-body .nav-megamenu .list-megamenu li.list-megamenu__item a.listmegamenu__item-link {
+    display: flex;
+    align-items: center;
+    padding: 38px 28px;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    height: 100%;
+    color: white;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu {
+    border-top: 2px solid #d9263c;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    position: absolute;
+    background: white;
+    box-shadow: 0 2px 3px #e7e7e7;
+    z-index: 999999;
+    list-style: none;
+    width: 200px;
+    top: 150px;
+    /*top: 100px;*/
+    left: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu li {
+    position: relative;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu li a {
+    flex-grow: 1;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu > li > i {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu > li:hover > a {
+    background: #eee;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu ul.sub-menu {
+    left: 199px;
+    top: -18px;
+}
+
+#head-body .nav-megamenu .list-megamenu li.list-megamenu__item:hover > a {
+    color: #ffca0d;
+    transition: all 0.3s linear;
+}
+
+#head-body .nav-megamenu .list-megamenu li.list-megamenu__item:hover > ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s linear;
+    top: 100px;
+}
+
+#head-body .nav-megamenu .list-megamenu li.list-megamenu__item ul.sub-menu > li:hover > ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s linear;
+    top: -3px;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu li:hover > a {
+    color: #5a4bde;
+    transition: all .3s ease;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #666;
+    transition: all .3s ease;
+}
+
+#head-body .nav-megamenu .list-megamenu ul.sub-menu li:last-child {
+    margin-bottom: 0px;
+}
+
 
 #head-body #search-wp {
     padding: 36px 0px 22px 150px;
 }
 
-#head-body #search-wp #s {
-    display: inline-block;
-    width: 400px;
-    border: none;
-    outline: none;
-    padding: 8px 20px;
-    line-height: normal;
-}
-
-#head-body #search-wp #sm-s {
-    position: relative;
-    left: -4px;
-    display: inline-block;
-    border: none;
-    outline: none;
-    background: #111111;
-    color: #fff;
-    padding: 12px 20px 10px;
-    line-height: 13px;
-    font-size: 13px;
-}
-
-#head-body #search-wp #sm-s:hover {
-    background: #444444;
-}
-
 #action-wp {
-    margin-left: 30px;
+    display: flex;
+    align-items: center;
     padding: 10px 0px;
 }
 
-#advisory-wp {
-    position: relative;
-    padding: 21px 30px 15px 50px;
+#user-wp, #cart-wp {
+    padding: 0 5px;
 }
 
-#advisory-wp:before {
+#action-wp .box-search {
+    background-color: white;
+    border-radius: 50px;
+    width: 48px;
+    height: 48px;
+    transition: 0.3s linear;
+    position: relative;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+#action-wp .box-search .input {
+    position: relative;
+    width: 200px;
+    height: 48px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#action-wp .box-search .input .clear {
     position: absolute;
-    content: '\f2a0';
-    font-family: 'FontAwesome';
+    right: -24px;
     top: 50%;
-    left: 0px;
-    font-size: 21px;
-    color: #fff;
-    width: 38px;
-    height: 38px;
-    line-height: 35px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    text-align: center;
-    transform: translateY(-50%);
-}
-
-#advisory-wp:after {
-    position: absolute;
-    content: "";
-    width: 1px;
-    height: 50%;
-    background: #ddd;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-}
-
-#advisory-wp span {
-    position: relative;
-    display: block;
-    color: #fff;
-}
-
-#advisory-wp .title {
-    font-size: 15px;
-}
-
-#advisory-wp .phone {
-    font-family: 'Roboto Bold';
-    font-size: 16px;
-}
-
-#cart-wp, #cart-respon-wp {
-    position: relative;
-    display: block;
-    color: #fff;
-    padding: 25px 0px 20px 10px;
-    margin-left: 20px;
-}
-
-#cart-wp i, #cart-respon-wp i {
+    transform: translate(-50%, -50%);
     font-size: 20px;
-    width: 49px;
-    height: 44px;
+    cursor: pointer;
+    color: #8888;
+}
+
+#action-wp .box-search .input input {
+    position: absolute;
+    font-weight: 400;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+
+#action-wp .box-search.active {
+    width: 280px;
+    transition: 0.3s linear;
+}
+
+#search {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+#search img {
+    position: absolute;
+    width: 100%;
+    max-width: 20px;
+    height: 20px;
+    display: block;
+}
+
+#user-wp, #cart-wp, #cart-respon-wp {
+    position: relative;
+    display: block;
+    color: white;
+    cursor: pointer;
+}
+
+#user-wp i, #cart-wp i, #cart-respon-wp i {
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
     line-height: 33px;
     text-align: center;
     background-color: #ffffff;
@@ -202,11 +314,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 22px;
+    top: 15px;
     width: 18px;
-    font-family: 'Roboto Medium';
-    height: 16px;
-    line-height: 17px;
+    height: 18px;
+    line-height: 18px;
     border-radius: 30px;
     margin: 0;
     min-width: 2px;
@@ -215,7 +326,7 @@
     font-weight: 500;
     color: #000;
     background: #ffca0d;
-    right: -2px;
+    right: -3px;
     padding: 0 5px;
     transition: .5s all;
 }
@@ -224,20 +335,13 @@
     display: none;
 }
 
-#cart-wp {
-    position: relative;
-    cursor: pointer;
-}
 
-#cart-wp #dropdown {
+#cart-wp #dropdown, #user-wp #user__dropdown {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     top: 130px;
     right: 0;
-    width: 250px;
-    min-height: 250px;
-    padding: 10px;
     background: #fff;
     border: 1px solid #e1e1e1;
     transition: all .4s ease;
@@ -247,7 +351,39 @@
     z-index: 1000;
 }
 
-#cart-wp #dropdown:before {
+#cart-wp #dropdown {
+    width: 250px;
+    min-height: 250px;
+    padding: 10px;
+}
+
+#user-wp #user__dropdown {
+    width: 160px;
+    min-height: 160px;
+}
+
+#user-wp #user__dropdown .list-infor {
+    margin-bottom: 0;
+}
+
+#user-wp #user__dropdown .list-infor .list-infor__item .list-infor__item-link {
+    display: block;
+    white-space: nowrap;
+    padding: 8px 0px 8px 10px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 14px;
+    font-family: FontDrop, sans-serif;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 0.3px;
+}
+
+#user-wp #user__dropdown .list-infor li:last-child a {
+    border-bottom: 0px !important;
+}
+
+
+#cart-wp #dropdown:before, #user-wp #user__dropdown:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -257,8 +393,8 @@
     left: 0;
 }
 
-#cart-wp:hover #dropdown {
-    top: 99px;
+#cart-wp:hover #dropdown, #user-wp:hover #user__dropdown {
+    top: 72px;
     opacity: 1;
     visibility: visible;
     border-top: 2px solid #d9263c;
@@ -339,30 +475,30 @@
 /*
    End cart empty
  */
-
 #cart-wp #dropdown .desc span {
     color: #d9263c;
-    font-family: 'Roboto Medium';
+    font-weight: 500;
 }
 
 #cart-wp #dropdown .list-cart .info .product-name {
     display: block;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 20px;
     color: #333;
 }
 
 #cart-wp #dropdown .list-cart .info .price {
     display: block;
-    font-family: 'Roboto Medium';
     font-size: 15px;
+    padding: 5px 0;
     color: #333;
 }
 
 #cart-wp #dropdown .list-cart .info .qty {
     display: block;
     font-size: 13px;
-    font-family: 'Roboto Light';
     color: #999;
+    margin-bottom: 0;
 }
 
 #cart-wp #dropdown .total-price {
@@ -370,8 +506,7 @@
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
-    font-family: 'Roboto Medium';
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 15px;
     color: #000;
     line-height: normal;
@@ -379,12 +514,12 @@
 
 #cart-wp #dropdown .total-price .title {
     flex-grow: 1;
+    font-weight: 500;
 }
 
 #cart-wp #dropdown .action-cart a {
     display: block;
     padding: 5px 20px;
-    font-family: 'Roboto Bold';
     text-transform: uppercase;
     font-size: 12px;
 }
@@ -398,12 +533,12 @@
     border-radius: 25px;
     display: block;
     padding: 5px 20px;
-    font-family: 'Roboto Bold';
     text-transform: uppercase;
     font-size: 12px;
     margin-right: 8px;
     background: #ffca0d;
     color: #000;
+    font-weight: 500;
 }
 
 
@@ -418,16 +553,25 @@
     border-radius: 25px;
     display: block;
     padding: 5px 20px;
-    font-family: 'Roboto Bold';
     text-transform: uppercase;
     font-size: 12px;
     color: white;
-
+    font-weight: 500;
 }
 
 #cart-wp #dropdown .action-cart a.view-cart:hover {
     background: #5a4bde;
     color: white;
+    transition: all .3s;
+}
+
+#user-wp #user__dropdown .list-infor .list-infor__item:hover .list-infor__item-link {
+    color: #5a4bde;
+    transition: all .3s;
+}
+
+#user-wp:hover i {
+    background: #ffca0d;
     transition: all .3s;
 }
 

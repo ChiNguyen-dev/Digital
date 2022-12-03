@@ -27,7 +27,7 @@
                         <a href="" title="" id="main-thumb">
                             <img id="zoom" src="admin/<?php echo $images[0]["image"] ?>"/>
                         </a>
-                        <div id="list-thumb">
+                        <div id="list-thumb" class="owl-carousel">
                             <?php if ($images != null) ?>
                             <?php foreach ($images as $image) { ?>
                                 <div class="thumbnail">
@@ -66,22 +66,20 @@
                             <span class="title">Số lượng: </span>
                             <span class="status"><?php echo $inventory != null || isset($_SESSION["cart"]) ? $inventory["quantity"] : "" ?></span>
                         </div>
-                        <div class="d-flex align-items-center pb-2">
+                        <div class="d-flex align-items-center pt-2 pb-3">
                             <div id="num-order-wp">
-                                <a title="" id="minus">
-                                    <i class="fa fa-minus"></i>
-                                </a>
-                                <input type="text" name="num-order"
-                                       value="1"
+                                <button type="button" class="minus"><i class="fa-solid fa-minus"></i></button>
+                                <input type="text"
+                                       class="quantity"
                                        data-price="<?php echo !empty($product["price"]) ? $product["price"] : "" ?>"
-                                       data-quantity="<?php echo $inventory != null ? $inventory["quantity"] : "" ?>"
-                                       id="num-order">
-                                <a title="" id="plus" class="">
-                                    <i class="fa fa-plus"></i>
-                                </a>
+                                       data-quantity=" <?php echo $inventory != null ? $inventory["quantity"] : "" ?>"
+                                       value="01">
+
+                                <button type="button"
+                                        data-quantity=" <?php echo $inventory != null ? $inventory["quantity"] : "" ?>"
+                                        class="plus"><i class="fa-solid fa-plus"></i></button>
                             </div>
-                            <p class="price price-item mr-4">
-                                <?php echo !empty($product["price"]) ? currency_format($product["price"]) : "" ?></p>
+                            <p class="price price-item mb-0 mr-4"> <?php echo !empty($product["price"]) ? currency_format($product["price"]) : "" ?></p>
                         </div>
                         <a href="cart.html" type="submit" title="Thêm giỏ hàng"
                            class="add-cart add-cart--detail"

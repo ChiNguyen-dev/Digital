@@ -16,8 +16,8 @@ function products()
 {
     $products = db_fetch_array("SELECT *
                                 FROM `product_image` as pi INNER JOIN `products` as p ON pi.product_id = p.product_id 
-                                WHERE p.isDelete = 0
-                                GROUP BY p.product_id");
+                                WHERE p.isDelete = 0 
+                                GROUP BY p.product_id limit 0,7");
     return !empty($products) ? $products : null;
 }
 

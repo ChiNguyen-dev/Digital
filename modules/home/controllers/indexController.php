@@ -7,23 +7,10 @@ function construct()
 
 function indexAction()
 {
-    $data["products"] = getItemPhone();
-    $data["sliders"] = findAll("sliders", "`status` != 2");
+    $data["phones"] = getItemPhone(322);
+    $data["laptops"] = getItemPhone(321);
+    $data["products"] = getAll();
+    $data["sliders"] = findAll("sliders", "`status` = 1");
     load_view('index', $data);
 }
 
-function addAction()
-{
-    echo $_GET['id'];
-    echo "add item";
-}
-
-function editAction()
-{
-    echo "edit item";
-}
-
-function deleteAction()
-{
-    echo "delete item";
-}
