@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group mb-1 clearfix">
-                                <label for="fullname " class="pb-2">Danh Xưng</label>
+                                <label for="fullname " class="pb-2">Danh Xưng:</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="nickName" id="male"
@@ -51,16 +51,17 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group clearfix">
-                                <label for="phone" class="pb-2">Số điện thoại</label>
+                                <label for="phone" class="pb-2">Số điện thoại:</label>
                                 <input type="text" class="form-control" name="phone" id="phone"
-                                       placeholder="Điện thoại" value="<?php if (!empty($phone_number)) echo $phone_number; ?>">
+                                       placeholder="Điện thoại"
+                                       value="<?php if (!empty($phone_number)) echo $phone_number; ?>">
                             </div>
                             <?php if (!empty($error["phone"])) echo "<p  style='color: #c0392b; font-size: 14px; margin: 0px 0 15px;font-weight: 400; '>{$error["phone"]}</p>" ?>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group clearfix">
-                                <label for="email" class="pb-2">Email*</label>
+                                <label for="email" class="pb-2">Email:</label>
                                 <input type="email" class="form-control" name="email" id="email"
                                        placeholder="Email" value="<?php if (!empty($email)) echo $email; ?>">
                             </div>
@@ -69,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="email" class="pb-2">Địa chỉ</label>
+                            <label for="email" class="pb-2">Địa chỉ:</label>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

@@ -7,6 +7,7 @@ function construct()
 function detailAction()
 {
     $data["product"] = findOne("products", "product_id", (int)$_GET["id"]);
+    $data["laptops"] = getItemPhone(findOne("categories", "category_id", $data["product"]["category_id"])["parent_id"]);
     $data["images"] = findAll("product_image", "`product_id`= '{$_GET["id"]}'");
     $data["colors"] = getColorById((int)$_GET["id"]);
     $data["inventory"] = findOne("inventories", "product_id", (int)$_GET["id"]);

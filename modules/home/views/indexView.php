@@ -14,10 +14,10 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="wp-inner">
-            <div class="support-wp">
-                <div class="col-md-4">
+    <div id="support-wp">
+        <div class="row mr-0 ml-0">
+            <div class="col-md-4">
+                <div class="box-support">
                     <div class="image-wp">
                         <img src="public/images/shipment.png" alt="">
                     </div>
@@ -26,150 +26,164 @@
                         <p>delivery charges are not hidden charges shipping policy.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="box-support box-support--border">
                     <div class="image-wp">
                         <img src="public/images/support.png" alt="">
                     </div>
                     <div class="content-wp">
-                        <h6>Free shipment</h6>
-                        <p>delivery charges are not hidden charges shipping policy.</p>
+                        <h6>24*7 Support</h6>
+                        <p>Offers A Wide Range Of Services! Look No Further.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="box-support">
                     <div class="image-wp">
                         <img src="public/images/services-3.png" alt="">
                     </div>
                     <div class="content-wp">
-                        <h6>Free shipment</h6>
-                        <p>delivery charges are not hidden charges shipping policy.</p>
+                        <h6>Gifts and voucher</h6>
+                        <p>All Gift Cards Expire 1year From Date Of Their Creation.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="wp-inner">
-        <?php get_sidebar(); ?>
-        <div class="main-content">
-            <!--            <div class="section" id="support-wp">-->
-            <!--                <div class="section-detail">-->
-            <!--                    <ul class="list-item clearfix">-->
-            <!--                        <li>-->
-            <!--                            <div class="thumb">-->
-            <!--                                <img src="public/images/icon-1.png">-->
-            <!--                            </div>-->
-            <!--                            <h3 class="title">Miễn phí vận chuyển</h3>-->
-            <!--                            <p class="desc">Tới tận tay khách hàng</p>-->
-            <!--                        </li>-->
-            <!--                        <li>-->
-            <!--                            <div class="thumb">-->
-            <!--                                <img src="public/images/icon-2.png">-->
-            <!--                            </div>-->
-            <!--                            <h3 class="title">Tư vấn 24/7</h3>-->
-            <!--                            <p class="desc">1900.9999</p>-->
-            <!--                        </li>-->
-            <!--                        <li>-->
-            <!--                            <div class="thumb">-->
-            <!--                                <img src="public/images/icon-3.png">-->
-            <!--                            </div>-->
-            <!--                            <h3 class="title">Tiết kiệm hơn</h3>-->
-            <!--                            <p class="desc">Với nhiều ưu đãi cực lớn</p>-->
-            <!--                        </li>-->
-            <!--                        <li>-->
-            <!--                            <div class="thumb">-->
-            <!--                                <img src="public/images/icon-4.png">-->
-            <!--                            </div>-->
-            <!--                            <h3 class="title">Thanh toán nhanh</h3>-->
-            <!--                            <p class="desc">Hỗ trợ nhiều hình thức</p>-->
-            <!--                        </li>-->
-            <!--                        <li>-->
-            <!--                            <div class="thumb">-->
-            <!--                                <img src="public/images/icon-5.png">-->
-            <!--                            </div>-->
-            <!--                            <h3 class="title">Đặt hàng online</h3>-->
-            <!--                            <p class="desc">Thao tác đơn giản</p>-->
-            <!--                        </li>-->
-            <!--                    </ul>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <div class="section" id="feature-product-wp">
-                <div class="section-head">
-                    <h3 class="section-title">Sản phẩm nổi bật</h3>
-                </div>
-                <div class="section-detail owl-carousel">
-
-                </div>
-            </div>
-            <div class="section" id="list-product-wp">
-                <div class="section-head">
-                    <h3 class="section-title">Điện thoại</h3>
-                </div>
-                <div class="section-detail">
-                    <ul class="list-item mb-0 clearfix">
-                        <div class="row pl-2">
-                            <?php if (!empty($phones)) { ?>
-                                <?php foreach ($phones as $phone) { ?>
-                                    <div class="col-md-3 mb-2 pl-1 pr-1">
-                                        <li>
-                                            <a href="san-pham/<?php echo $phone["slug"] ?>-<?php echo $phone["product_id"] ?>.html"
-                                               title="" class="thumb">
-                                                <img class="image-size" src="admin/<?php echo $phone["image"]; ?>"></a>
-                                            <a href="?page=detail_product" title="image"
-                                               class="product-name"> <?php echo $phone["p_name"] ?></a>
-                                            <div class="price">
-                                                <span class="new"><?php echo currency_format($phone["price"]); ?></span>
-                                                <span class="old">8.990.000đ</span>
-                                            </div>
-                                            <div class="action clearfix">
-                                                <button title="Thêm giỏ hàng" class="add-cart add-cart--home"
-                                                        data-id="<?php echo $phone["product_id"]; ?>"
-                                                        data-color="<?php echo $phone["color_id"]; ?>">Thêm giỏ hàng
-                                                </button>
-                                                <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                            </div>
-                                        </li>
+    <div class="row mr-0 ml-0">
+        <div class="feature-product__title">
+            <h2>sản phẩm nổi bật</h2>
+            <img src="public/images/Divider.png" alt="">
+        </div>
+        <div class="list-feature-product owl-carousel">
+            <?php if ($laptops != null) { ?>
+                <?php foreach ($laptops as $key => $laptop) { ?>
+                    <div class="item">
+                        <div class="cart">
+                            <div class="cart__image">
+                                <a href="san-pham/<?php echo $laptop["slug"] ?>-<?php echo $laptop["product_id"] ?>.html">
+                                    <img class="cart__image-1" src="admin/<?php echo $laptop["image"]; ?>"
+                                         alt="">
+                                    <img class="cart__image-2" src="public/images/img-pro-14.png" alt="">
+                                    <div class="cart__image-labels">
+                                        <span class="new">new</span>
+                                        <span class="sale">sale</span>
                                     </div>
-                                <?php } ?>
-                            <?php } ?>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            <div class="section" id="list-product-wp">
-                <div class="section-head">
-                    <h3 class="section-title">Laptop</h3>
-                </div>
-                <div class="section-detail">
-                    <ul class="list-item clearfix">
-                        <div class="row pl-2">
-                            <?php if (!empty($laptops)) { ?>
-                                <?php foreach ($laptops as $laptop) { ?>
-                                    <div class="col-md-3 mb-2 pl-1 pr-1">
-                                        <li>
-                                            <a href="san-pham/<?php echo $laptop["slug"] ?>-<?php echo $laptop["product_id"] ?>.html"
-                                               title="" class="thumb">
-                                                <img src="admin/<?php echo $laptop["image"]; ?>">
-                                            </a>
-                                            <a href="" title="" class="product-name"><?php echo $laptop["p_name"] ?></a>
-                                            <div class="price">
-                                                <span class="new"><?php echo currency_format($laptop["price"]) ?></span>
-                                                <span class="old">8.690.000đ</span>
-                                            </div>
-                                            <div class="action clearfix">
-                                                <button title="Thêm giỏ hàng" class="add-cart add-cart--home"
-                                                        data-id="<?php echo $laptop["product_id"]; ?>"
-                                                        data-color="<?php echo $laptop["color_id"]; ?>">Thêm giỏ hàng
-                                                </button>
-                                                <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                            </div>
-                                        </li>
+                                </a>
+                            </div>
+                            <div class="cart__content">
+                                <div class="cart-evaluation">
+                                    <ul class="list-start">
+                                        <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-regular fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-regular fa-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="cart__content-row">
+                                    <div class="cart__content-row__name">
+                                        <a href="san-pham/<?php echo $laptop["slug"] ?>-<?php echo $laptop["product_id"] ?>.html"><?php echo $laptop["p_name"]; ?></a>
                                     </div>
-                                <?php } ?>
-                            <?php } ?>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="cart__content-price pr-3"><?php echo currency_format($laptop["price"]); ?></div>
+                                    <div class="cart__content-discount">-20%</div>
+                                </div>
+                                <ul class="actions">
+                                    <li class="actions__item">
+                                        <a href="" title="Yêu thích"><i class="fa-regular fa-heart"></i></a>
+                                    </li>
+                                    <li class="actions__item">
+                                        <a href="" title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
+                                    </li>
+                                    <li class="actions__item">
+                                        <a href="" title="So sánh"><i
+                                                    class="fa-solid fa-down-left-and-up-right-to-center"></i></a>
+                                    </li>
+                                    <li class="actions__item">
+                                        <button class="add-cart--home"
+                                                title="Thêm giỏ hàng"
+                                                data-qty="<?php echo isset($_SESSION["cart"]) ? $_SESSION["cart"]["infor"]["num_order"] : 0; ?>"
+                                                data-id="<?php echo $laptop["product_id"]; ?>"
+                                                data-color="<?php echo $laptop["color_id"]; ?>"
+                                        ><i class="fa-solid fa-cart-plus"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </ul>
-                </div>
-            </div>
+                    </div>
+                <?php } ?>
+            <?php } ?>
         </div>
     </div>
+    <div class="list-product-wp">
+        <div class="list-product-wp__title">
+            <h2>sản phẩm </h2>
+            <img src="public/images/Divider.png" alt="">
+        </div>
+        <div class="row mr-0 ml-0 mt-4">
+            <?php if ($products != null) { ?>
+                <?php foreach ($products as $key => $product) { ?>
+                    <div class="col-md-3 mb-3">
+                        <div class="cart">
+                            <div class="cart__image">
+                                <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html">
+                                    <img class="cart__image-1" src="admin/<?php echo $product["image"]; ?>" alt="">
+                                    <img class="cart__image-2" src="public/images/img-pro-14.png" alt="">
+                                    <div class="cart__image-labels">
+                                        <span class="new">new</span>
+                                        <span class="sale">sale</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cart__content">
+                                <div class="cart-evaluation">
+                                    <ul class="list-start">
+                                        <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-regular fa-star"></i></a></li>
+                                        <li><a href=""><i class="fa-regular fa-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="cart__content-row">
+                                    <div class="cart__content-row__name">
+                                        <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html"><?php echo $product["p_name"]; ?></a>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="cart__content-price pr-3"><?php echo currency_format($product["price"]); ?></div>
+                                    <div class="cart__content-discount">-20%</div>
+                                </div>
+                                <ul class="actions">
+                                    <li class="actions__item">
+                                        <a href="" title="Yêu thích"><i class="fa-regular fa-heart"></i></a>
+                                    </li>
+                                    <li class="actions__item">
+                                        <a href="" title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
+                                    </li>
+                                    <li class="actions__item">
+                                        <a href="" title="So sánh"><i
+                                                    class="fa-solid fa-down-left-and-up-right-to-center"></i></a>
+                                    </li>
+                                    <li class="actions__item">
+                                        <button class="add-cart--home"
+                                                title="Thêm giỏ hàng"
+                                                data-qty="<?php echo isset($_SESSION["cart"]) ? $_SESSION["cart"]["infor"]["num_order"] : 0; ?>"
+                                                data-id="<?php echo $product["product_id"]; ?>"
+                                                data-color="<?php echo $product["color_id"]; ?>"
+                                        ><i class="fa-solid fa-cart-plus"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        </div>
+    </div>
+</div>
 </div>
 <?php get_footer(); ?>

@@ -37,30 +37,30 @@ $(document).ready(function () {
     });
 
 //  FEATURE PRODUCT
-    let feature_product = $('#feature-product-wp .owl-carousel');
+    let feature_product = $('.list-feature-product');
     feature_product.owlCarousel({
-        items: 1,
+        items: 4,
         loop: true,
-        lazyLoad: true,
+        margin: 10,
         autoplay: true,
-        autoplayTimeout: 5000
+        autoplayTimeout: 4000
     });
 
 //  SAME CATEGORY
-    let same_category = $('#same-category-wp .list-item');
-    same_category.owlCarousel({
-        autoPlay: true,
-        navigation: true,
-        navigationText: false,
-        paginationNumbers: false,
-        pagination: false,
-        stopOnHover: true,
-        items: 4, //10 items above 1000px browser width
-        itemsDesktop: [1000, 4], //5 items between 1000px and 901px
-        itemsDesktopSmall: [800, 3], // betweem 900px and 601px
-        itemsTablet: [600, 2], //2 items between 600 and 0
-        itemsMobile: [375, 1] // itemsMobile disabled - inherit from itemsTablet option
-    });
+//     let same_category = $('#same-category-wp .list-item');
+//     same_category.owlCarousel({
+//         autoPlay: true,
+//         navigation: true,
+//         navigationText: false,
+//         paginationNumbers: false,
+//         pagination: false,
+//         stopOnHover: true,
+//         items: 4, //10 items above 1000px browser width
+//         itemsDesktop: [1000, 4], //5 items between 1000px and 901px
+//         itemsDesktopSmall: [800, 3], // betweem 900px and 601px
+//         itemsTablet: [600, 2], //2 items between 600 and 0
+//         itemsMobile: [375, 1] // itemsMobile disabled - inherit from itemsTablet option
+//     });
 
 //  SCROLL TOP
     $(window).scroll(function () {
@@ -141,18 +141,42 @@ $(document).ready(function () {
     $(".add-cart--home").click(function () {
         const id = $(this).attr("data-id");
         const color = $(this).attr("data-color");
-        const data = {
-            product_id: id,
-            color_id: color
+        const cart = $("#btn-cart");
+        let imgToDrag = $(this).parent(".actions__item").parent(".actions").parent(".cart__content").parent(".cart").find("img").eq(0);
+        if (imgToDrag) {
+            let imgClone = imgToDrag.clone().offset({
+                top: imgToDrag.offset().top,
+                left: imgToDrag.offset().left
+            }).css({
+                'opacity': '0.8',
+                'position': 'absolute',
+                'height': '150px',
+                'width': '150px',
+                'z-index': '100'
+            }).appendTo($('body')).animate({
+                'top': cart.offset().top + 20,
+                'left': cart.offset().left + 30,
+                'width': 75,
+                'height': 75
+            }, 1000, 'easeInOutExpo');
+            imgClone.animate({
+                'width': 0,
+                'height': 0
+            }, function () {
+                $(this).detach()
+            });
         }
+
         $.ajax({
             url: Default_URL + "?mod=carts&controllers=add&action=add",
             method: 'POST',
-            data: data,
+            data: {product_id: id, color_id: color},
             dataType: 'json',
             success: function (data) {
                 console.log(data)
-                $("#num").text(data.num_order);
+                setTimeout(function () {
+                    $("#num").text(data.num_order);
+                }, 1500);
                 const dropdown = document.querySelector("#dropdown");
                 dropdown.innerHTML = ``;
                 const desc = document.createElement("p");
@@ -192,7 +216,6 @@ $(document).ready(function () {
         });
     });
 
-
     $(".data-change").change(function () {
         const id = $(this).val();
         const dataType = $(this).attr("data-type");
@@ -207,7 +230,6 @@ $(document).ready(function () {
                 const options = data.filter(function (data, index, arr) {
                     return index < arr.length - 1;
                 });
-
                 if (data[data.length - 1] === "0") {
                     const select = document.querySelector("select[data-type='1']");
                     if (select.childNodes.length > 1) {
@@ -303,4 +325,6 @@ $(document).ready(function () {
         $('#tab-menu li:first-child').addClass('show');
         $('.tabItem:first-child').show();
     }
+
+
 });

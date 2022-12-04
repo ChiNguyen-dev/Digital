@@ -4,12 +4,8 @@
         <div class="wp-inner">
             <div class="section-detail">
                 <ul class="list-item clearfix">
-                    <li>
-                        <a href="?page=home" title="">Trang chủ</a>
-                    </li>
-                    <li>
-                        <a href="" title="">Sản phẩm làm đẹp da</a>
-                    </li>
+                    <li><a href="?page=home" title="">Trang chủ</a></li>
+                    <li><a href="" title="">Sản phẩm làm đẹp da</a></li>
                 </ul>
             </div>
         </div>

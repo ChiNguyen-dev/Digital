@@ -59,57 +59,14 @@
         </div>
     </div>
     <div id="foot-bot">
-        <div class="wp-inner">
-            <!--            <p id="copyright">© Bản quyền thuộc về unitop.vn | Php Master</p>-->
-            <p id="copyright" class="mb-0">© Bản quyền thuộc về chinguyen-dev | Php Master</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--            <p id="copyright">© Bản quyền thuộc về unitop.vn | Php Master</p>-->
+                    <p id="copyright" class="mb-0">© Bản quyền thuộc về chinguyen-dev | Php Master</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div id="menu-respon">
-    <a href="?page=home" title="" class="logo">VSHOP</a>
-    <div id="menu-respon-wp">
-        <ul class="" id="main-menu-respon">
-            <li>
-                <a href="?page=home" title>Trang chủ</a>
-            </li>
-            <li>
-                <a href="?page=category_product" title>Điện thoại</a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="?page=category_product" title="">Iphone</a>
-                    </li>
-                    <li>
-                        <a href="?page=category_product" title="">Samsung</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="?page=category_product" title="">Iphone X</a>
-                            </li>
-                            <li>
-                                <a href="?page=category_product" title="">Iphone 8</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="?page=category_product" title="">Nokia</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="?page=category_product" title>Máy tính bảng</a>
-            </li>
-            <li>
-                <a href="?page=category_product" title>Laptop</a>
-            </li>
-            <li>
-                <a href="?page=category_product" title>Đồ dùng sinh hoạt</a>
-            </li>
-            <li>
-                <a href="?page=blog" title>Blog</a>
-            </li>
-            <li>
-                <a href="#" title>Liên hệ</a>
-            </li>
-        </ul>
     </div>
 </div>
 <div id="btn-top">
@@ -128,6 +85,7 @@
         crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="public/js/zoomsl.min.js"></script>
 <script src="public/carousel/dist/owl.carousel.min.js"
         type="text/javascript"></script>
