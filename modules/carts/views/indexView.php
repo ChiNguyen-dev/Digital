@@ -86,7 +86,7 @@
                         </div>
                         <p class="cart-title text-center text-muted">Giỏ hàng chưa có sản phẩm nào</p>
                         <div class="d-flex justify-content-center pb-3">
-                            <a href="<?php echo base_url() ?>" class="buy-now">Mua sắm ngay</a>
+                            <a href="<?php echo base_url()?>" class="buy-now">Mua sắm ngay</a>
                         </div>
                     </div>
                 <?php } ?>
@@ -97,7 +97,7 @@
                 <p class="title">
                     Click vào <span>“Cập nhật giỏ hàng”</span> để cập nhật số lượng. Nhập vào số lượng
                     <span>0</span> để xóa sản phẩm khỏi giỏ hàng. Nhấn vào thanh toán để hoàn tất mua hàng.</p>
-                <a href="?page=home" title="" id="buy-more">Mua tiếp</a><br/>
+                <a href="<?php echo base_url()?>" title="" id="buy-more">Mua tiếp</a><br/>
                 <a href="cart/deleteAll" title="" id="delete-cart">Xóa giỏ hàng</a>
             </div>
         </div>

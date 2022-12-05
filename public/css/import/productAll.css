@@ -255,7 +255,7 @@
 .list-feature-product .cart .actions .actions__item button {
     background-color: #f1f1f1;
     transition: all 0.3s ease;
-    border: none;
+    border: 1px solid #f1f1f1;
     padding: 0 10px;
     margin-right: 0;
 }
@@ -274,6 +274,7 @@
 .list-product-wp .cart .actions li.actions__item:hover button,
 .list-feature-product .cart .actions li.actions__item:hover button {
     background-color: #5a4bde;
+    border: 1px solid #5a4bde;
     color: white;
     transition: all 0.3s ease;
 }

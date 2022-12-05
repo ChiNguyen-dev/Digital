@@ -63,9 +63,7 @@
                         <div class="cart">
                             <div class="cart__image">
                                 <a href="san-pham/<?php echo $laptop["slug"] ?>-<?php echo $laptop["product_id"] ?>.html">
-                                    <img class="cart__image-1" src="admin/<?php echo $laptop["image"]; ?>"
-                                         alt="">
-                                    <img class="cart__image-2" src="public/images/img-pro-14.png" alt="">
+                                    <?php echo images($laptop["product_id"]); ?>
                                     <div class="cart__image-labels">
                                         <span class="new">new</span>
                                         <span class="sale">sale</span>
@@ -130,8 +128,7 @@
                         <div class="cart">
                             <div class="cart__image">
                                 <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html">
-                                    <img class="cart__image-1" src="admin/<?php echo $product["image"]; ?>" alt="">
-                                    <img class="cart__image-2" src="public/images/img-pro-14.png" alt="">
+                                    <?php echo images($product["product_id"]); ?>
                                     <div class="cart__image-labels">
                                         <span class="new">new</span>
                                         <span class="sale">sale</span>

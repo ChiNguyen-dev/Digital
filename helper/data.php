@@ -40,6 +40,21 @@ function menu($data, $parent_id, $class, $level = 0): string
     return $result;
 }
 
+function images($product_id)
+{
+    $data = "";
+    $images = findAll("product_image", "`product_id` = '$product_id'");
+    if ($images != null && count($images) > 1) {
+        for ($i = 0; $i < 2; $i++) {
+            $index = $i + 1;
+            $data .= "<img class='cart__image-{$index}' src='admin/{$images[$i]['image']}' alt=''>";
+        }
+    } else {
+        $data .= "<img class='cart__image-1' src='admin/{$images[0]['image']}' alt=''> <img class='cart__image-2' src='admin/{$images[0]['image']}' alt=''>";
+    }
+    return $data;
+}
+
 function has_child($data, $parent_id): bool
 {
     foreach ($data as $value) {
