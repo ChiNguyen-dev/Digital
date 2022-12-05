@@ -28,7 +28,7 @@ function menu($data, $parent_id, $class, $level = 0): string
         foreach ($data as $value) {
             if ($value["parent_id"] == $parent_id) {
                 $result .= "<li>";
-                $result .= "<a href='san-pham/{$value["slug"]}' title=''>{$value['cate_name']}</a>";
+                $result .= "<a href='danh-muc/{$value["slug"]}' title=''>{$value['cate_name']}</a>";
                 if (has_child($data, $value["category_id"])) {
 
                     $result .= menu($data, $value["category_id"], $class, $level + 1);

@@ -124,7 +124,7 @@
         <div class="row mr-0 ml-0 mt-4">
             <?php if ($products != null) { ?>
                 <?php foreach ($products as $key => $product) { ?>
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-3 mb-4">
                         <div class="cart">
                             <div class="cart__image">
                                 <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html">
@@ -179,6 +179,13 @@
                     </div>
                 <?php } ?>
             <?php } ?>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <nav aria-label="..." style="margin: 0 auto; padding-bottom: 40px;">
+                <?php echo pagination($total_page, $page) ?>
+            </nav>
         </div>
     </div>
 </div>
