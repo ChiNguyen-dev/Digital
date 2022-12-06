@@ -56,7 +56,7 @@
             <h2>sản phẩm nổi bật</h2>
             <img src="public/images/Divider.png" alt="">
         </div>
-        <div class="list-feature-product owl-carousel">
+        <div class="list-feature-product owl-carousel owl-theme">
             <?php if ($laptops != null) { ?>
                 <?php foreach ($laptops as $key => $laptop) { ?>
                     <div class="item">
@@ -181,7 +181,7 @@
             <?php } ?>
         </div>
     </div>
-    <div class="container">
+    <div class="container pb-3">
         <div class="row d-flex justify-content-center">
             <div id="pagination"><ul data-totalPage="<?php echo $total_page; ?>" data-page="<?php echo $page; ?>"></ul></div>
             <script src="public/js/pagination.js"></script>

@@ -466,12 +466,12 @@
 }
 
 #main-content-wp #pagination ul {
-    border: 1px solid #ccc;
-    background-color: white;
+    /*border: 1px solid #ccc;*/
+    /*background-color: white;*/
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 4px;
     border-radius: 50px;
 }
 
@@ -480,11 +480,10 @@
     list-style: none;
     line-height: 45px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.4s ease;
-
 }
 
 #main-content-wp #pagination ul li.numb {

@@ -41,7 +41,7 @@ $(document).ready(function () {
     feature_product.owlCarousel({
         items: 4,
         loop: true,
-        margin: 10,
+        margin: 10,nav:true,
         autoplay: true,
         autoplayTimeout: 4000
     });

@@ -2,7 +2,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    line-height: normal;
     color: #272727;
     line-height: 24px;
 }
@@ -50,7 +49,6 @@ a {
     border-radius: 0;
     -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0px 2px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.15);
 }
 
 .dropdown .dropdown-toggle {
@@ -62,7 +60,6 @@ a {
 .dropdown-menu > li > a {
     padding: 5px 20px;
     color: #2b2b2b;
-    font-family: "Roboto Regular";
 }
 
 .table-responsive {
@@ -236,4 +233,25 @@ iframe {
 #list-thumb .owl-stage-outer .owl-stage {
     width: 100% !important;
     margin-right: 0 !important;
+}
+
+.list-feature-product.owl-carousel .owl-nav > button.owl-prev {
+    top: calc(50% - 30px);
+    left: -5px;
+    background: #d5d5d5 !important;
+    color: #666 !important;
+}
+
+.list-feature-product.owl-carousel .owl-nav > button.owl-next {
+    top: calc(50% - 30px);
+    background: #d5d5d5 !important;
+    color: #666 !important;
+    right: -5px;
+}
+
+.list-feature-product.owl-carousel .owl-nav > button.owl-prev span,
+.list-feature-product.owl-carousel .owl-nav > button.owl-next span,
+.owl-carousel .owl-nav > button.owl-prev span,
+.owl-carousel .owl-nav > button.owl-next span {
+    transform: translateY(-2px);
 }
