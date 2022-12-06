@@ -325,6 +325,4 @@ $(document).ready(function () {
         $('#tab-menu li:first-child').addClass('show');
         $('.tabItem:first-child').show();
     }
-
-
 });

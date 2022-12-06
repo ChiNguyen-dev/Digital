@@ -13,12 +13,12 @@ function indexAction()
     $data["sliders"] = findAll("sliders", "`status` = 1");
     // Pagination
     $total_row = count(getAll());
-    $total_pages = ceil($total_row / 16);
+    $total_pages = ceil($total_row / 2);
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-    $start = ($page - 1) * 16;
+    $start = ($page - 1) * 2;
     $data["page"] = $page;
     $data["total_page"] = $total_pages;
-    $data["products"] = getProductAll($start, 16);
+    $data["products"] = getProductAll($start, 2);
 
     load_view('index', $data);
 }

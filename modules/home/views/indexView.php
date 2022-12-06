@@ -182,10 +182,9 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <nav aria-label="..." style="margin: 0 auto; padding-bottom: 40px;">
-                <?php echo pagination($total_page, $page) ?>
-            </nav>
+        <div class="row d-flex justify-content-center">
+            <div id="pagination"><ul data-totalPage="<?php echo $total_page; ?>" data-page="<?php echo $page; ?>"></ul></div>
+            <script src="public/js/pagination.js"></script>
         </div>
     </div>
 </div>
