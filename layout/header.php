@@ -61,7 +61,7 @@
                                     <?php echo menu(findAll("categories"), 0, "sub-menu") ?>
                                 </li>
                                 <li class="list-megamenu__item">
-                                    <a href="" class="listmegamenu__item-link">
+                                    <a href="<?php echo base_url("danh-muc") ?>" class="listmegamenu__item-link">
                                         Danh mục
                                     </a>
                                 </li>

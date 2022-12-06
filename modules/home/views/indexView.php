@@ -94,7 +94,8 @@
                                         <a href="" title="Yêu thích"><i class="fa-regular fa-heart"></i></a>
                                     </li>
                                     <li class="actions__item">
-                                        <a href="" title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="san-pham/<?php echo $laptop["slug"] ?>-<?php echo $laptop["product_id"] ?>.html"
+                                           title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
                                     </li>
                                     <li class="actions__item">
                                         <a href="" title="So sánh"><i
@@ -159,7 +160,8 @@
                                         <a href="" title="Yêu thích"><i class="fa-regular fa-heart"></i></a>
                                     </li>
                                     <li class="actions__item">
-                                        <a href="" title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html"
+                                           title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
                                     </li>
                                     <li class="actions__item">
                                         <a href="" title="So sánh"><i
@@ -183,7 +185,9 @@
     </div>
     <div class="container pb-3">
         <div class="row d-flex justify-content-center">
-            <div id="pagination"><ul data-totalPage="<?php echo $total_page; ?>" data-page="<?php echo $page; ?>"></ul></div>
+            <div id="pagination">
+                <ul data-totalPage="<?php echo $total_page; ?>" data-page="<?php echo $page; ?>"></ul>
+            </div>
             <script src="public/js/pagination.js"></script>
         </div>
     </div>

@@ -1,168 +1,70 @@
 <?php get_header(); ?>
 <div class="container pt-4 pl-0 pr-0">
     <div class="row">
-        <div class="col-md-3 pl-0 pr-0"">
+        <div class="col-md-2 pl-0 pr-0"">
             <?php get_sidebar("category"); ?>
         </div>
-        <div class="col-md-9">
-            <div class="section" id="list-product-wp">
-                <div class="section-detail mt-0">
-                    <ul class="list-item clearfix">
-                        <div class="row pl-2">
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=""
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
+        <div class="col-md-10 pl-0">
+            <div class="list-product-wp mt-0">
+                <div class="row mr-0 ml-0">
+                    <?php if ($products != null) { ?>
+                        <?php foreach ($products as $key => $product) { ?>
+                            <div class="col-md-3 mb-4 ">
+                                <div class="cart">
+                                    <div class="cart__image">
+                                        <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html">
+                                            <?php echo images($product["product_id"]); ?>
+                                            <div class="cart__image-labels">
+                                                <span class="new">new</span>
+                                                <span class="sale">sale</span>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
+                                    <div class="cart__content">
+                                        <div class="cart-evaluation">
+                                            <ul class="list-start">
+                                                <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                                <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                                <li><a href=""><i class="fa-solid fa-star"></i></a></li>
+                                                <li><a href=""><i class="fa-regular fa-star"></i></a></li>
+                                                <li><a href=""><i class="fa-regular fa-star"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="cart__content-row">
+                                            <div class="cart__content-row__name">
+                                                <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html"><?php echo $product["p_name"]; ?></a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="cart__content-price pr-3"><?php echo currency_format($product["price"]); ?></div>
+                                            <div class="cart__content-discount">-20%</div>
+                                        </div>
+                                        <ul class="actions">
+                                            <li class="actions__item">
+                                                <a href="" title="Yêu thích"><i class="fa-regular fa-heart"></i></a>
+                                            </li>
+                                            <li class="actions__item">
+                                                <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html"
+                                                   title="Chi tiết"><i class="fa-solid fa-eye"></i></a>
+                                            </li>
+                                            <li class="actions__item">
+                                                <a href="" title="So sánh"><i
+                                                            class="fa-solid fa-down-left-and-up-right-to-center"></i></a>
+                                            </li>
+                                            <li class="actions__item">
+                                                <button class="add-cart--home"
+                                                        title="Thêm giỏ hàng"
+                                                        data-qty="<?php echo isset($_SESSION["cart"]) ? $_SESSION["cart"]["infor"]["num_order"] : 0; ?>"
+                                                        data-id="<?php echo $product["product_id"]; ?>"
+                                                        data-color="<?php echo $product["color_id"]; ?>"
+                                                ><i class="fa-solid fa-cart-plus"></i></button>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </li>
+                                </div>
                             </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="col-md-3 mb-2 pl-1 pr-1">
-                                <li class="border">
-                                    <a href=".html"
-                                       title="" class="thumb">
-                                        <img src="public/images/img-pro-23.png">
-                                    </a>
-                                    <a href="" title="" class="product-name">iPhone 12 Pro |Chính Hãng VNAiPhone 12 Pro
-                                        |Chính Hãng VNAiPhone 12</a>
-                                    <div class="price">
-                                        <span class="new">8.690.000đ</span>
-                                        <span class="old">8.690.000đ</span>
-                                    </div>
-                                    <div class="action clearfix">
-                                        <button title="Thêm giỏ hàng" class="add-cart add-cart--home">Thêm giỏ hàng
-                                        </button>
-                                        <a href="?page=checkout" title="Mua ngay" class="buy-now">Mua ngay</a>
-                                    </div>
-                                </li>
-                            </div>
-                        </div>
-                    </ul>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
