@@ -1,15 +1,32 @@
 <?php get_header(); ?>
 <div class="container pt-4 pl-0 pr-0">
     <div class="row">
-        <div class="col-md-2 pl-0 pr-0"">
-            <?php get_sidebar("category"); ?>
+        <div class="col-md-3 pl-0 pr-0">
+            <div class="sidebar-category">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sidebar-category__filter">
+                            <div class="filter__price filter">
+                                <div class="filter__price-title">
+                                    <h5 class="has-toggle ">Danh mục</h5>
+                                </div>
+                                <ul class="sub-menu-sidebar">
+                                    <li><a href=""></a>Laptop</li>
+                                    <li><a href=""></a>Điện thoại</li>
+                                    <li><a href=""></a>Thiết bị âm thanh</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-10 pl-0">
+        <div class="col-md-9 pl-0 pr-0">
             <div class="list-product-wp mt-0">
                 <div class="row mr-0 ml-0">
                     <?php if ($products != null) { ?>
                         <?php foreach ($products as $key => $product) { ?>
-                            <div class="col-md-3 mb-4 ">
+                            <div class="col-md-4 mb-4 pr-0 ">
                                 <div class="cart">
                                     <div class="cart__image">
                                         <a href="san-pham/<?php echo $product["slug"] ?>-<?php echo $product["product_id"] ?>.html">

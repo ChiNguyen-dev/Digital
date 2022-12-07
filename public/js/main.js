@@ -41,11 +41,31 @@ $(document).ready(function () {
     feature_product.owlCarousel({
         items: 4,
         loop: true,
-        margin: 10,nav:true,
+        margin: 10, nav: true,
         autoplay: true,
         autoplayTimeout: 4000
     });
 
+    // sidebar menu
+    const sideBar_menu = $(".sidebar-category__filter > .filter__price > .filter__price-title>h5.has-toggle");
+    sideBar_menu.on("click", function () {
+        if (!$(this).hasClass("active")) {
+            $(this).addClass('active');
+        }else {
+            $(this).removeClass('active');
+        }
+        if (!$(this).parent(".filter__price-title").parent(".filter").hasClass("active")) {
+            $(".sub-menu-sidebar").slideUp();
+            $(this).parent(".filter__price-title").parent(".filter__price").find(".sub-menu-sidebar").slideDown();
+            $(".sidebar-category__filter > .filter").removeClass('active');
+            $(this).parent(".filter__price-title").parent(".filter").addClass('active');
+            return false;
+        } else {
+            $('.sub-menu-sidebar').slideUp();
+            $(".sidebar-category__filter > .filter").removeClass('active');
+            return false;
+        }
+    });
 //  SAME CATEGORY
 //     let same_category = $('#same-category-wp .list-item');
 //     same_category.owlCarousel({

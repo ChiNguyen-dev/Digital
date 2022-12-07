@@ -13,6 +13,74 @@
     width: 23%;
 }
 
+.sidebar-category .sidebar-category__filter .filter__price {
+    border: 1px solid #e5e5e5;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5 {
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px 25px 10px 0px;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: Oswald, sans-serif;
+    color: #000;
+    font-weight: 600;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5.has-toggle:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: auto;
+    background: #fdbe00;
+    width: 40px;
+    height: 2px;
+    bottom: -1px;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5.has-toggle:after {
+    display: block;
+    position: absolute;
+    content: "\f067";
+    font-family: "FontAwesome";
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5.has-toggle.active:after {
+    content: "\f068";
+}
+
+
+.sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar {
+    padding: 15px 0 20px;
+}
+
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar {
+    display: none;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price ul {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price ul li {
+    margin: 0 0 14px;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price ul li:last-child {
+    margin: 0;
+}
+
+
 #slider-wp .item img {
     width: 100% !important
 }
@@ -476,12 +544,12 @@
 }
 
 #main-content-wp #pagination ul li {
-    color: #5a4bde;
+    color: #333333;
     list-style: none;
     line-height: 45px;
     text-align: center;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.4s ease;
 }
@@ -515,7 +583,7 @@
 #main-content-wp #pagination ul li.active,
 #main-content-wp #pagination ul li.numb:hover,
 #main-content-wp #pagination ul li.btn:hover {
-    background-color: #5a4bde;
+    background-color: #333333;
     color: white;
     transition: all 0.4s ease;
 }

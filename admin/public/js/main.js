@@ -21,7 +21,6 @@ $(document).ready(function () {
         if (!$(this).parent('li').hasClass('active')) {
             $("#sidebar-menu").find(".dashboard-title").removeClass("active-color");
             $("#sidebar-menu").find(".dashboard-icon").removeClass("active-color");
-
             $('#sidebar-menu > .nav-item').find(".active-color").removeClass("active-color");
             $('.sub-menu').slideUp();
             $(this).parent('li').find('.sub-menu').slideDown();

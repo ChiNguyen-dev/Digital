@@ -7,4 +7,15 @@
             <?php echo menu(findAll("categories"), 0, "list-item") ?>
         </div>
     </div>
+    <div class="sidebar-category__filter">
+        <div class="row">
+           <div class="col-md-12">
+               <div class="filter__price">
+                   <div class="filter__price-title">
+                       <h5>price</h5>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
 </div>
