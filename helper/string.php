@@ -55,3 +55,61 @@ function pagination($total_page, $page): string
     $result .= "</ul>";
     return $result;
 }
+
+function menuCate($data, $parent_id, $class, $level = 0, $slugParent = "")
+{
+    $result = $level == 0 ? "<ul class='{$class}'>" : "<ul class='sub-menu-sidebar__chilrent'>";
+    $slug = "";
+    if (!empty($data)) {
+        foreach ($data as $key => $value) {
+            if ($value["parent_id"] == $parent_id) {
+                if ($level == 0) {
+                    $slug = 'danh-muc/' . $value["slug"];
+                } else {
+                    $slug = $slugParent . '/' . $value["slug"];
+                }
+                $result .= "<li>";
+                $result .= "<div class='has-toggle d-flex align-items-center'>";
+                $result .= " <a href='{$slug}' title='{$value['cate_name']}'>{$value['cate_name']}</a>";
+                if (has_child($data, $value["category_id"])) {
+                    $result .= "<i class='has-toggle__icon fa-solid fa-angle-down'></i></div>";
+                    $result .= menuCate($data, $value["category_id"], $class, $level + 1, $slug);
+                } else {
+                    $result .= "</div>";
+                }
+            }
+        }
+    }
+    $result .= "</ul>";
+    return $result;
+}
+
+function menu($data, $parent_id, $class, $level = 0, $slugParent = ""): string
+{
+    $result = $level == 0 ? "<ul class='{$class}'>" : "<ul class='sub-menu'>";
+    $slug = "";
+    if (!empty($data)) {
+        foreach ($data as $value) {
+            if ($value["parent_id"] == $parent_id) {
+                $slug = $level == 0 ? 'danh-muc/' . $value["slug"] : $slugParent . '/' . $value["slug"];
+                $result .= "<li>";
+                $result .= "<a href='{$slug}' title=''>{$value['cate_name']}</a>";
+                if (has_child($data, $value["category_id"])) {
+                    $result .= menu($data, $value["category_id"], $class, $level + 1, $slug);
+                }
+            }
+        }
+    }
+    $result .= "</ul>";
+    return $result;
+}
+
+function has_child($data, $parent_id): bool
+{
+    foreach ($data as $value) {
+        if ($value["parent_id"] == $parent_id) {
+            return true;
+        }
+    }
+    return false;
+}

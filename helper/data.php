@@ -21,24 +21,23 @@ function products()
     return !empty($products) ? $products : null;
 }
 
-function menu($data, $parent_id, $class, $level = 0): string
-{
-    $result = $level == 0 ? "<ul class='{$class}'>" : "<ul class='sub-menu'>";
-    if (!empty($data)) {
-        foreach ($data as $value) {
-            if ($value["parent_id"] == $parent_id) {
-                $result .= "<li>";
-                $result .= "<a href='danh-muc/{$value["slug"]}' title=''>{$value['cate_name']}</a>";
-                if (has_child($data, $value["category_id"])) {
-
-                    $result .= menu($data, $value["category_id"], $class, $level + 1);
-                }
-            }
-        }
-    }
-    $result .= "</ul>";
-    return $result;
-}
+//function menu($data, $parent_id, $class, $level = 0): string
+//{
+//    $result = $level == 0 ? "<ul class='{$class}'>" : "<ul class='sub-menu'>";
+//    if (!empty($data)) {
+//        foreach ($data as $value) {
+//            if ($value["parent_id"] == $parent_id) {
+//                $result .= "<li>";
+//                $result .= "<a href='danh-muc/{$value["slug"]}' title=''>{$value['cate_name']}</a>";
+//                if (has_child($data, $value["category_id"])) {
+//                    $result .= menu($data, $value["category_id"], $class, $level + 1);
+//                }
+//            }
+//        }
+//    }
+//    $result .= "</ul>";
+//    return $result;
+//}
 
 function images($product_id)
 {
@@ -55,15 +54,15 @@ function images($product_id)
     return $data;
 }
 
-function has_child($data, $parent_id): bool
-{
-    foreach ($data as $value) {
-        if ($value["parent_id"] == $parent_id) {
-            return true;
-        }
-    }
-    return false;
-}
+//function has_child($data, $parent_id): bool
+//{
+//    foreach ($data as $value) {
+//        if ($value["parent_id"] == $parent_id) {
+//            return true;
+//        }
+//    }
+//    return false;
+//}
 
 /*
  * GET ONE OBJECT OF TABLE

@@ -47,25 +47,37 @@ $(document).ready(function () {
     });
 
     // sidebar menu
-    const sideBar_menu = $(".sidebar-category__filter > .filter__price > .filter__price-title>h5.has-toggle");
+    const sideBar_menu = $(".sidebar-category__filter > .filter > .filter__title>h5.has-toggle");
     sideBar_menu.on("click", function () {
-        if (!$(this).hasClass("active")) {
-            $(this).addClass('active');
-        }else {
-            $(this).removeClass('active');
-        }
-        if (!$(this).parent(".filter__price-title").parent(".filter").hasClass("active")) {
-            $(".sub-menu-sidebar").slideUp();
-            $(this).parent(".filter__price-title").parent(".filter__price").find(".sub-menu-sidebar").slideDown();
-            $(".sidebar-category__filter > .filter").removeClass('active');
-            $(this).parent(".filter__price-title").parent(".filter").addClass('active');
+        !$(this).hasClass("active") ? $(this).addClass('active') : $(this).removeClass('active');
+        const parent = $(this).parent(".filter__title").parent(".filter");
+        if (!parent.hasClass("active")) {
+            parent.find('.sub-menu-sidebar').slideUp();
+            $(this).parent(".filter__title").parent(".filter").find(".sub-menu-sidebar").slideDown();
+            parent.removeClass('active');
+            $(this).parent(".filter__title").parent(".filter").addClass('active');
             return false;
         } else {
-            $('.sub-menu-sidebar').slideUp();
-            $(".sidebar-category__filter > .filter").removeClass('active');
+            parent.find('.sub-menu-sidebar').slideUp();
+            parent.removeClass('active');
             return false;
         }
     });
+    const chidrent = $(".sidebar-category__filter > .filter > .sub-menu-sidebar > li > .has-toggle > i.has-toggle__icon");
+    chidrent.on("click", function () {
+        const parent = $(this).parent(".has-toggle").parent("li");
+        if (parent.hasClass("active")) {
+            parent.find(".sub-menu-sidebar__chilrent").slideUp();
+            parent.removeClass('active');
+            return false;
+        } else {
+            $(".sidebar-category__filter > .filter > .sub-menu-sidebar > li").find(".sub-menu-sidebar__chilrent").slideUp();
+            parent.find(".sub-menu-sidebar__chilrent").slideDown();
+            parent.removeClass('active');
+            parent.addClass('active');
+            return false;
+        }
+    })
 //  SAME CATEGORY
 //     let same_category = $('#same-category-wp .list-item');
 //     same_category.owlCarousel({

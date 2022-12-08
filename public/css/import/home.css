@@ -13,13 +13,13 @@
     width: 23%;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price {
+.sidebar-category .sidebar-category__filter .filter {
     border: 1px solid #e5e5e5;
     padding: 0 20px;
     margin-bottom: 20px;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5 {
+.sidebar-category .sidebar-category__filter .filter .filter__title h5 {
     position: relative;
     text-transform: uppercase;
     margin: 0;
@@ -31,7 +31,7 @@
     font-weight: 600;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5.has-toggle:before {
+.sidebar-category .sidebar-category__filter .filter .filter__title h5.has-toggle:before {
     position: absolute;
     content: "";
     left: 0;
@@ -42,7 +42,7 @@
     bottom: -1px;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5.has-toggle:after {
+.sidebar-category .sidebar-category__filter .filter .filter__title h5.has-toggle:after {
     display: block;
     position: absolute;
     content: "\f067";
@@ -52,32 +52,100 @@
     transform: translateY(-50%);
     font-size: 13px;
     font-weight: normal;
+    cursor: pointer;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price .filter__price-title h5.has-toggle.active:after {
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar li .has-toggle a {
+    flex-grow: 1;
+}
+
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar li .has-toggle a:hover,
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar li .has-toggle a:hover ~ i.has-toggle__icon {
+    color: #5a4bde;
+    transition: all 0.3s ease;
+}
+
+.sidebar-category .sidebar-category__filter .filter .filter__title h5.has-toggle.active:after {
     content: "\f068";
 }
 
 
-.sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar {
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar {
     padding: 15px 0 20px;
 }
 
-.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar {
-    display: none;
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar .has-toggle .has-toggle__icon {
+    padding: 5px 0 5px 5px;
+    cursor: pointer;
+    font-size: 12px;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price ul {
+.sidebar-category .sidebar-category__filter .filter .sub-menu-sidebar .sub-menu-sidebar__chilrent {
+    display: none;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+
+.sidebar-category .sidebar-category__filter .filter ul {
     margin-bottom: 0;
     list-style: none;
 }
 
-.sidebar-category .sidebar-category__filter .filter__price ul li {
+.sidebar-category .sidebar-category__filter .filter ul li {
     margin: 0 0 14px;
+
 }
 
-.sidebar-category .sidebar-category__filter .filter__price ul li:last-child {
+.sidebar-category .sidebar-category__filter .filter ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+}
+
+.sidebar-category .sidebar-category__filter .filter ul li:last-child {
     margin: 0;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-around;*/
+    /*flex-wrap: wrap;*/
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar li {
+    display: inline-block;
+    line-height: 0;
+    margin: 0 10px 15px 0;
+    position: relative;
+}
+
+.sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar li a {
+    display: block;
+    background: #f7f7f7;
+    height: 38px;
+    line-height: 38px;
+    min-width: 38px;
+    border-radius: 32px;
+    text-align: center;
+    padding: 0 14px;
+    transition: all .3s ease;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar li a:hover {
+    background-color: #5a4bde;
+    color: white;
+    transition: all .3s ease;
+}
+
+.sidebar-category .banner {
+    width: 100%;
+}
+.sidebar-category .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 

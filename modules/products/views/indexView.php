@@ -2,24 +2,7 @@
 <div class="container pt-4 pl-0 pr-0">
     <div class="row">
         <div class="col-md-3 pl-0 pr-0">
-            <div class="sidebar-category">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="sidebar-category__filter">
-                            <div class="filter__price filter">
-                                <div class="filter__price-title">
-                                    <h5 class="has-toggle ">Danh mục</h5>
-                                </div>
-                                <ul class="sub-menu-sidebar">
-                                    <li><a href=""></a>Laptop</li>
-                                    <li><a href=""></a>Điện thoại</li>
-                                    <li><a href=""></a>Thiết bị âm thanh</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php get_sidebar("category"); ?>
         </div>
         <div class="col-md-9 pl-0 pr-0">
             <div class="list-product-wp mt-0">

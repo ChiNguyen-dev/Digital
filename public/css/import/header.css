@@ -185,7 +185,7 @@
     opacity: 1;
     visibility: visible;
     transition: all 0.3s linear;
-    top: -3px;
+    top: -2px;
 }
 
 #head-body .nav-megamenu .list-megamenu ul.sub-menu li:hover > a {
