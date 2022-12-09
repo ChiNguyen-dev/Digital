@@ -33,17 +33,19 @@
                     <!--                    </ul>-->
                     <?php echo menuCate(findAll("categories"), 0, "sub-menu-sidebar") ?>
                 </div>
+                <?php if(isset($_SESSION["slug"])){ ?>
                 <div class="filter__price filter active">
                     <div class="filter__title">
                         <h5 class="has-toggle ">Giá</h5>
                     </div>
                     <ul class="sub-menu-sidebar">
-                        <li><a href="">dưới 10tr</a></li>
-                        <li><a href="">10 - 15tr</a></li>
-                        <li><a href="">15 - 20tr</a></li>
-                        <li><a href="">trên 20tr</a></li>
+                        <li><a href="<?php echo $_SESSION["slug"];?>&gia-ban=<?php echo create_slug("dưới 10 triệu"); ?>">dưới 10 triệu</a></li>
+                        <li><a href="<?php echo $_SESSION["slug"];?>&gia-ban=<?php echo create_slug("từ 10 đến 15 triệu"); ?>">từ 10 đến 15 triệu</a></li>
+                        <li><a href="<?php echo $_SESSION["slug"];?>&gia-ban=<?php echo create_slug("từ 15 đến 20 triệu"); ?>">từ 15 đến 20 triệu</a></li>
+                        <li><a href="<?php echo $_SESSION["slug"];?>&gia-ban=<?php echo create_slug("trên 20 triệu"); ?>">trên 20 triệu</a></li>
                     </ul>
                 </div>
+                <?php } ?>
             </div>
         </div>
         <div class="col-md-12">

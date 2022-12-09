@@ -9,9 +9,9 @@ RewriteRule ^san-pham/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=products&con
 
 #RewriteRule ^danh-muc/([a-zA-Z0-9_-]+)$ index.php?mod=products&controllers=index&action=index&slug=$1
 
-RewriteRule ^danh-muc/(.*)$ index.php?mod=products&controllers=index&action=index&slug=$1
+RewriteRule ^danh-muc(.*)$ index.php?mod=products&controllers=index&action=index&cate=$1
 
-RewriteRule ^danh-muc$ index.php?mod=products&controllers=index&action=index
+#RewriteRule ^danh-muc$ index.php?mod=products&controllers=index&action=index
 
 
 
