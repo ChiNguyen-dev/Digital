@@ -399,7 +399,16 @@
 }
 
 #cart-wp .list-cart {
+    -ms-overflow-style: none; /* khai báo sử dụng Internet Explorer, Edge */
+    scrollbar-width: none; /* sử dụng Firefox */
+    overflow-y: scroll;
+    max-height: 300px;
     margin-bottom: 15px;
+}
+
+
+#cart-wp .list-cart::-webkit-scrollbar {
+    display: none; /* cho Chrome, Safari, and Opera */
 }
 
 #cart-wp .list-cart li {
@@ -473,7 +482,7 @@
 /*
    End cart empty
  */
-#cart-wp #dropdown .desc span {
+#cart-wp #dropdown .desc span, #cart-wp #dropdown .total-price .price {
     color: #d9263c;
     font-weight: 500;
 }

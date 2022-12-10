@@ -62,17 +62,14 @@
                                     </a>
                                 </li>
                                 <li class="list-megamenu__item">
-                                    <a href="<?php echo base_url("danh-muc") ?>" class="listmegamenu__item-link"> Danh
-                                        mục</a>
+                                    <a href="<?php echo base_url("danh-muc") ?>" class="listmegamenu__item-link"> Danh mục</a>
                                     <?php echo menu(findAll("categories"), 0, "sub-menu") ?>
                                 </li>
                                 <li class="list-megamenu__item">
                                     <a href="" class="listmegamenu__item-link">Liên hệ</a>
                                 </li>
                                 <li class="list-megamenu__item">
-                                    <a href="" class="listmegamenu__item-link">
-                                        blog
-                                    </a>
+                                    <a href="" class="listmegamenu__item-link">blog</a>
                                 </li>
                             </ul>
                         </div>
@@ -112,20 +109,17 @@
                                     </a>
                                     <span id="num">
                                     <?php echo isset($_SESSION["cart"]) ? $_SESSION["cart"]["infor"]["num_order"] : 0; ?>
-                                </span>
+                                    </span>
                                 </div>
                                 <div id="dropdown">
                                     <?php if (isset($_SESSION["cart"])) { ?>
                                         <p class="desc">Có
-                                            <span>
-                                            <?php echo isset($_SESSION["cart"]) ? $_SESSION["cart"]["infor"]["num_order"] : 0; ?>
-                                            sản phẩm
-                                        </span>
-                                            trong giỏ hàng
+                                            <span><?php echo isset($_SESSION["cart"]) ? $_SESSION["cart"]["infor"]["num_order"] : 0; ?>
+                                            sản phẩm </span>trong giỏ hàng
                                         </p>
                                         <ul class="list-cart">
                                             <?php if (isset($_SESSION["cart"])) { ?>
-                                                <?php foreach ($_SESSION["cart"]["buy"] as $item) { ?>
+                                                <?php foreach (array_reverse($_SESSION["cart"]["buy"]) as $item) { ?>
                                                     <li class="clearfix">
                                                         <a href="" title="" class="thumb">
                                                             <img src="admin/<?php echo $item["image"] ?>" alt="">

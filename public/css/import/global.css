@@ -4,6 +4,13 @@ body {
     font-size: 15px;
     color: #272727;
     line-height: 24px;
+    -ms-overflow-style: none; /* khai báo sử dụng Internet Explorer, Edge */
+    scrollbar-width: none; /* sử dụng Firefox */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* cho Chrome, Safari, and Opera */
 }
 
 .wp-inner {

@@ -592,9 +592,13 @@
 }
 
 #pagination ul li.active,
-#pagination ul li.numb:hover,
-#pagination ul li.btn:hover {
-    background-color: #333333;
+#pagination ul li.numb:hover {
+    background-color: #5a4bde;
     color: white;
+    transition: all 0.4s ease;
+}
+
+#pagination ul li.btn:hover {
+    color: #5a4bde;
     transition: all 0.4s ease;
 }

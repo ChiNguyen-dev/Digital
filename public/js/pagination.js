@@ -8,7 +8,7 @@ function element(totalPages, page) {
     let activeLi;
     let beforePages = page - 1;
     let afterPages = page + 1;
-    if (page > 1) liTag += `<a href="san-pham/page-${page - 1}" ><li class="btn pre"><span><i class="fa-solid fa-backward-fast"></i></span></li></a>`;
+    if (page > 1) liTag += `<a href="san-pham/page-${page - 1}" ><li class="btn pre"><span>Quay lại</span></li></a>`;
     if (page > 2) {
         liTag += `<a href="san-pham/page-1"><li class="numb"><span>1</span></li></a>`;
         if (page > 3) liTag += `<li class="dots"><span>...</span></li>`;
@@ -36,7 +36,7 @@ function element(totalPages, page) {
         liTag += `<a href="san-pham/page-${totalPages}"><li class="numb"><span>${totalPages}</span></li></a>`;
     }
 
-    if (page < totalPages) liTag += `<a href="san-pham/page-${afterPages}"><li class="btn next"><span><i class="fa-solid fa-forward-fast"></i></span></li></a>`;
+    if (page < totalPages) liTag += `<a href="san-pham/page-${afterPages}"><li class="btn next"><span>Tiếp</span></li></a>`;
     ulTag.innerHTML = liTag;
 }
 

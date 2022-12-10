@@ -78,21 +78,7 @@ $(document).ready(function () {
             return false;
         }
     })
-//  SAME CATEGORY
-//     let same_category = $('#same-category-wp .list-item');
-//     same_category.owlCarousel({
-//         autoPlay: true,
-//         navigation: true,
-//         navigationText: false,
-//         paginationNumbers: false,
-//         pagination: false,
-//         stopOnHover: true,
-//         items: 4, //10 items above 1000px browser width
-//         itemsDesktop: [1000, 4], //5 items between 1000px and 901px
-//         itemsDesktopSmall: [800, 3], // betweem 900px and 601px
-//         itemsTablet: [600, 2], //2 items between 600 and 0
-//         itemsMobile: [375, 1] // itemsMobile disabled - inherit from itemsTablet option
-//     });
+
 
 //  SCROLL TOP
     $(window).scroll(function () {
@@ -198,7 +184,6 @@ $(document).ready(function () {
                 $(this).detach()
             });
         }
-
         $.ajax({
             url: Default_URL + "?mod=carts&controllers=add&action=add",
             method: 'POST',
@@ -217,7 +202,7 @@ $(document).ready(function () {
                 dropdown.appendChild(desc);
                 const cart = document.createElement("ul");
                 cart.classList.add("list-cart");
-                Object.values(data.products).forEach(function (value, index) {
+                Object.values(data.products).reverse().forEach(function (value, index) {
                     const li = document.createElement("li");
                     li.classList.add("clearfix");
                     li.innerHTML = `<a href="" title="" class="thumb"> <img src="admin/${value.image}"></a>

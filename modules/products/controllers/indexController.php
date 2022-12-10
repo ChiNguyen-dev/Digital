@@ -15,18 +15,19 @@ function indexAction()
     $page = $_GET["page"] ?? 1;
     $pagination = handlePagination($totalProduct, 12, $page);
     $limit = " LIMIT {$pagination["startPage"]},12";
-    $where = "";
+    $where = $priceFilter;
     if (!empty($paramSlugCate)) {
         $categoryID = array();
         $paramSlugCate = explode("/", $paramSlugCate);
         $category = findOne("categories", "slug", $paramSlugCate[count($paramSlugCate) - 1]);
         $categoryID[] = $category["category_id"];
         if (count($paramSlugCate) == 2) {
+            $categoryID = array();
             $cateChildren = findAll("categories", "`parent_id` = '{$category["category_id"]}'");
             foreach ($cateChildren as $cateChild) $categoryID[] = $cateChild["category_id"];
         }
-        $strCateID = implode(",", $categoryID);
-        $category = findAll("categories", "`category_id` IN({$strCateID})");
+        $strCategoryID = implode(",", $categoryID);
+        $category = findAll("categories", "`category_id` IN({$strCategoryID})");
         if ($category != null) foreach ($category as $value) $categoryID[] = $value["category_id"];
         $id = implode(",", $categoryID);
         $where = "AND p.category_id IN({$id})" . $priceFilter;
