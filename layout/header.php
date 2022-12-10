@@ -57,13 +57,14 @@
                         <div class="nav-megamenu">
                             <ul class="list-megamenu">
                                 <li class="list-megamenu__item">
-                                    <a href="<?php echo base_url("danh-muc")?>" class="listmegamenu__item-link"> sản phẩm </a>
-                                    <?php echo menu(findAll("categories"), 0, "sub-menu") ?>
+                                    <a href="<?php echo base_url() ?>" class="listmegamenu__item-link">
+                                        Trang chủ
+                                    </a>
                                 </li>
                                 <li class="list-megamenu__item">
-                                    <a href="<?php echo base_url("danh-muc")?>" class="listmegamenu__item-link">
-                                        Danh mục
-                                    </a>
+                                    <a href="<?php echo base_url("danh-muc") ?>" class="listmegamenu__item-link"> Danh
+                                        mục</a>
+                                    <?php echo menu(findAll("categories"), 0, "sub-menu") ?>
                                 </li>
                                 <li class="list-megamenu__item">
                                     <a href="" class="listmegamenu__item-link">Liên hệ</a>

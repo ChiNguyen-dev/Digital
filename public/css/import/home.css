@@ -133,6 +133,7 @@
     font-size: 15px;
     letter-spacing: 1px;
 }
+
 .sidebar-category .sidebar-category__filter .filter__price .sub-menu-sidebar li a:hover {
     background-color: #5a4bde;
     color: white;
@@ -142,6 +143,7 @@
 .sidebar-category .banner {
     width: 100%;
 }
+
 .sidebar-category .banner img {
     width: 100%;
     height: auto;
@@ -350,63 +352,6 @@
     transition: all 0.3s ease;
 }
 
-/*#support-wp .section-detail {*/
-/*    background: #fff;*/
-/*    padding: 15px 0px;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    margin-bottom: 0;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li {*/
-/*    width: 20%;*/
-/*    text-align: center;*/
-/*    position: relative;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li:before {*/
-/*    position: absolute;*/
-/*    content: '';*/
-/*    top: 50%;*/
-/*    right: 0px;*/
-/*    width: 1px;*/
-/*    height: 75%;*/
-/*    background: #ddd;*/
-/*    transform: translateY(-50%);*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li:last-child:before {*/
-/*    display: none;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li .thumb {*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    max-width: 50px;*/
-/*    margin: 0 auto;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li .thumb img {*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li .title {*/
-/*    font-size: 16px;*/
-/*    font-weight: 400;*/
-/*    line-height: normal;*/
-/*    margin-bottom: 5px;*/
-/*}*/
-
-/*#support-wp .section-detail .list-item li .desc {*/
-/*    font-size: 13px;*/
-/*    color: #8e8e8e;*/
-/*    line-height: normal;*/
-/*}*/
 
 #feature-product-wp .section-title, #list-product-wp .section-title {
     font-size: 20px;
@@ -601,7 +546,7 @@
     color: #666;
 }
 
-#main-content-wp #pagination ul {
+#pagination ul {
     /*border: 1px solid #ccc;*/
     /*background-color: white;*/
     display: flex;
@@ -611,7 +556,7 @@
     border-radius: 50px;
 }
 
-#main-content-wp #pagination ul li {
+#pagination ul li {
     color: #333333;
     list-style: none;
     line-height: 45px;
@@ -622,35 +567,33 @@
     transition: all 0.4s ease;
 }
 
-#main-content-wp #pagination ul li.numb {
+#pagination ul li.numb {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     margin: 0 3px;
 }
 
-#main-content-wp #pagination ul li.dots {
+#pagination ul li.dots {
     font-size: 22px;
     cursor: default;
 }
 
-#main-content-wp #pagination ul li.btn {
-    /*background-color: #5a4bde;*/
-    /*color: white;*/
+#pagination ul li.btn {
     padding: 0 20px;
 }
 
-#main-content-wp #pagination ul li.pre {
+#pagination ul li.pre {
     border-radius: 25px 5px 5px 25px;
 }
 
-#main-content-wp #pagination ul li.next {
+#pagination ul li.next {
     border-radius: 5px 25px 25px 5px;
 }
 
-#main-content-wp #pagination ul li.active,
-#main-content-wp #pagination ul li.numb:hover,
-#main-content-wp #pagination ul li.btn:hover {
+#pagination ul li.active,
+#pagination ul li.numb:hover,
+#pagination ul li.btn:hover {
     background-color: #333333;
     color: white;
     transition: all 0.4s ease;

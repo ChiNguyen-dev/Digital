@@ -24,7 +24,7 @@ GROUP BY p.product_id";
     return !empty($products) ? $products : null;
 }
 
-function getProductAll($start, $num)
+function getProductAll($limit)
 {
 
     $sql = "SELECT p.product_id, p.p_name, p.price,p.slug,pc.color_id,iv.quantity
@@ -32,7 +32,7 @@ function getProductAll($start, $num)
                      INNER JOIN `product_color` as pc ON p.product_id = pc.product_id
                      INNER JOIN `inventories` as iv ON p.product_id = iv.product_id
             WHERE  p.status = 1 AND p.isDelete = 0 AND iv.quantity > 0
-            GROUP BY p.product_id LIMIT {$start},{$num};";
+            GROUP BY p.product_id {$limit};";
     $products = db_fetch_array($sql);
     return !empty($products) ? $products : null;
 }

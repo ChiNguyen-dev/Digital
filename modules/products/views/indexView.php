@@ -69,6 +69,14 @@
             </div>
         </div>
     </div>
+    <div class="container pb-3">
+        <div class="row d-flex justify-content-center">
+            <div id="pagination">
+                <ul data-totalPage="<?php echo $total_page; ?>" data-page="<?php echo $page; ?>"></ul>
+            </div>
+            <script src="public/js/pagination.js"></script>
+        </div>
+    </div>
 </div>
 <?php get_footer(); ?>
 
