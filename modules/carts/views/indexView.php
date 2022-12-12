@@ -29,7 +29,7 @@
                         <tbody>
                         <?php if (isset($_SESSION["cart"])) { ?>
                             <?php foreach ($_SESSION["cart"]["buy"] as $key => $item) { ?>
-                                <tr>
+                                <tr cart-id="<?php echo $key; ?>">
                                     <td><?php echo $item["code"] ?></td>
                                     <td>
                                         <a href="" title="" class="thumb">
@@ -43,10 +43,17 @@
                                     </td>
                                     <td><?php echo currency_format($item["price"]) ?></td>
                                     <td>
-                                        <input type="text" name="num-order" value="<?php echo $item["quantity"] ?>"
-                                               class="num-order">
+                                        <div class="num-order">
+                                            <div class="btn btn--minus" btn-status="minus"><i
+                                                        class="fa-solid fa-minus"></i></div>
+                                            <input type="text" name="num-order" value="<?php echo $item["quantity"] ?>"
+                                                   data-id="<?php echo $key; ?>" disabled>
+                                            <div class="btn btn--plus" btn-status="plus"><i
+                                                        class="fa-solid fa-plus"></i></div>
+                                        </div>
+
                                     </td>
-                                    <td><?php echo currency_format($item["total"]) ?></td>
+                                    <td class="amount"><?php echo currency_format($item["total"]) ?></td>
                                     <td>
                                         <a href="cart/delete-<?php echo $key ?>" title="" class="del-product">
                                             <i class="fa-regular fa-trash-can"></i>
@@ -86,7 +93,7 @@
                         </div>
                         <p class="cart-title text-center text-muted">Giỏ hàng chưa có sản phẩm nào</p>
                         <div class="d-flex justify-content-center pb-3">
-                            <a href="<?php echo base_url()?>" class="buy-now">Mua sắm ngay</a>
+                            <a href="<?php echo base_url() ?>" class="buy-now">Mua sắm ngay</a>
                         </div>
                     </div>
                 <?php } ?>
@@ -97,7 +104,7 @@
                 <p class="title">
                     Click vào <span>“Cập nhật giỏ hàng”</span> để cập nhật số lượng. Nhập vào số lượng
                     <span>0</span> để xóa sản phẩm khỏi giỏ hàng. Nhấn vào thanh toán để hoàn tất mua hàng.</p>
-                <a href="<?php echo base_url()?>" title="" id="buy-more">Mua tiếp</a><br/>
+                <a href="<?php echo base_url() ?>" title="" id="buy-more">Mua tiếp</a><br/>
                 <a href="cart/deleteAll" title="" id="delete-cart">Xóa giỏ hàng</a>
             </div>
         </div>

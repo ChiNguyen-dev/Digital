@@ -72,14 +72,13 @@
                                 <input type="text"
                                        class="quantity"
                                        data-price="<?php echo !empty($product["price"]) ? $product["price"] : "" ?>"
-                                       data-quantity=" <?php echo $inventory != null ? $inventory["quantity"] : "" ?>"
                                        value="01">
 
                                 <button type="button"
-                                        data-quantity=" <?php echo $inventory != null ? $inventory["quantity"] : "" ?>"
                                         class="plus"><i class="fa-solid fa-plus"></i></button>
                             </div>
-                            <p class="price price-item mb-0 mr-4"> <?php echo !empty($product["price"]) ? currency_format($product["price"]) : "" ?></p>
+                            <p class="price price-item mb-0 mr-4"
+                               data-price=""> <?php echo !empty($product["price"]) ? currency_format($product["price"]) : "" ?></p>
                         </div>
                         <a href="cart.html" type="submit" title="Thêm giỏ hàng"
                            class="add-cart add-cart--detail"

@@ -17,7 +17,7 @@
 
 /*CART*/
 .cart-page {
-    padding-top: 0!important;
+    padding-top: 0 !important;
     padding-bottom: 40px;
 }
 
@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .cart-page #main-content {
     width: 100% !important;
     padding-right: 0 !important;
@@ -52,11 +53,34 @@
 }
 
 #info-cart-wp table tbody tr td .num-order {
-    width: 35px;
-    height: 35px;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    border: 1px solid rgb(228, 229, 240);
+    border-radius: 6px;
+    background: rgb(248, 248, 252);
+    width: 115px;
+    margin: 0 auto;
+}
+
+#info-cart-wp table tbody tr td .num-order input {
+    width: 30px;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: none;
+    padding: 0;
+    height: 100%;
+    flex: 1 1 0%;
+}
+
+#info-cart-wp table tbody tr td .num-order .btn i {
+    font-size: 13px;
+    color: #5a5c6c;
+    transition: all 0.3s ease;
+}
+
+#info-cart-wp table tbody tr td .num-order .btn:hover i {
+    color: #5a4bde;
+    transition: all 0.3s ease;
 }
 
 #info-cart-wp table tbody tr td .thumb {

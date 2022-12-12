@@ -94,26 +94,30 @@ $(document).ready(function () {
 
 // CHOOSE NUMBER ITEM
     const qty = $(".quantity");
-    const quantity = parseInt(qty.attr('data-quantity'));
+    const quantity = parseInt($(".num-product .status").text());
     const price = parseInt(qty.attr('data-price'));
     const newPrice = $(".price-item");
     let total = 0;
     let count = 1;
     $('.plus').click(function () {
         if (quantity > 0 && count < quantity) count++;
+        $(".num-product .status").text(quantity - count);
         qty.attr('value', count < 10 ? "0" + count : count);
         total = price * count;
         let current = new Intl.NumberFormat("en-VN").format(total);
-        newPrice.text(current + "đ")
+        newPrice.text(current + "đ");
+        newPrice.attr("data-price", total);
     });
     $('.minus').click(function () {
         if (count > 1) {
             count--;
+            $(".num-product .status").text(quantity - count + 1);
             qty.attr('value', count < 10 ? "0" + count : count);
             if (total >= price) {
                 total = total - price;
                 let current = new Intl.NumberFormat("en-VN").format(total);
-                newPrice.text(current + "đ")
+                newPrice.text(current + "đ");
+                newPrice.attr("data-price", total);
             }
         }
     });
@@ -122,16 +126,41 @@ $(document).ready(function () {
         $(".color").find(".color__infor--active").removeClass("color__infor--active");
         $(this).addClass("color__infor--active");
     });
-
     // URL DEFAULT
     const Default_URL = "http://localhost:8080/Digital/";
+    const changeQtyItemCart = $(".table > tbody > tr > td > .num-order > .btn");
+    changeQtyItemCart.on("click", function () {
+        const isEvent = $(this).parent(".num-order").find("input[name='num-order']");
+        const id = parseInt(isEvent.attr("data-id"));
+        const status = $(this).attr("btn-status");
+        const quantity = parseInt(isEvent.val());
+        $.ajax({
+            url: Default_URL + "?mod=carts&controllers=index&action=update",
+            method: 'POST',
+            data: {status: status, quantity: quantity, id: id},
+            dataType: 'json',
+            success: function (data) {
+                isEvent.val(data.products.quantity);
+                isEvent.parent(".num-order").parent("td").parent("tr").find(".amount").text(new Intl.NumberFormat("en-VN").format(data.products.total) + "đ");
+                $("#total-price span").text(new Intl.NumberFormat("en-VN").format(data.total_order) + "đ");
+
+                $("#num").text(data.num_order);
+                $("#dropdown .desc span").text(data.num_order + " sản phẩm");
+                $("#dropdown .total-price .price").text(new Intl.NumberFormat("en-VN").format(data.total_order) + "đ");
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    });
 
     // ADD CART FROM DETAIL
     $(".add-cart--detail").click(function () {
         const color = $(".color__infor--active").attr("color-id");
         const id = $(this).attr("data-id");
-        let quantity = $("#num-order").val();
-        let price = parseInt($("#num-order").attr("data-price")) * parseInt(quantity);
+        const quantity = parseInt($(".quantity").val());
+        let price = parseInt($(".price-item").attr("data-price"));
         const data = {
             product_id: id,
             color_id: color,
@@ -233,6 +262,7 @@ $(document).ready(function () {
         });
     });
 
+
     $(".data-change").change(function () {
         const id = $(this).val();
         const dataType = $(this).attr("data-type");
@@ -285,7 +315,6 @@ $(document).ready(function () {
             }
         })
     });
-
 
 //  MAIN MENU
     $('#category-product-wp .list-item > li').find('.sub-menu').after('<i class="fa fa-angle-right arrow" aria-hidden="true"></i>');
