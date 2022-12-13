@@ -11,6 +11,7 @@
           type="text/css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="public/style.css" rel="stylesheet" type="text/css"/>
     <link href="public/responsive.css" rel="stylesheet" type="text/css"/>
     <link href="public/carousel/dist/assets/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
@@ -62,7 +63,8 @@
                                     </a>
                                 </li>
                                 <li class="list-megamenu__item">
-                                    <a href="<?php echo base_url("danh-muc") ?>" class="listmegamenu__item-link"> Danh mục</a>
+                                    <a href="<?php echo base_url("danh-muc") ?>" class="listmegamenu__item-link"> Danh
+                                        mục</a>
                                     <?php echo menu(findAll("categories"), 0, "sub-menu") ?>
                                 </li>
                                 <li class="list-megamenu__item">

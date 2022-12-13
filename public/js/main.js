@@ -8,7 +8,22 @@ $(document).ready(function () {
         $(".box-search").toggleClass("active");
     });
 
-//  SLIDER
+    // MODAL
+    if (sessionStorage.getItem("modal") !== null) {
+        $(".modal-bg").css("display", "none");
+        $(".modal-wp").css("display", "none");
+    }
+    $(".close").click(function () {
+        $(".modal-img").addClass("animate__animated animate__zoomOut");
+        const checkbox = $(".status-popup #checked");
+        if (checkbox.prop("checked") === true) sessionStorage.setItem("modal", "Checked")
+        setTimeout(function () {
+            $(".modal-bg").css("display", "none");
+            $(".modal-wp").css("display", "none");
+        }, 500);
+    })
+
+    //  SLIDER
     let slider = $('#slider-wp');
     slider.owlCarousel({
         items: 1,
@@ -20,7 +35,7 @@ $(document).ready(function () {
     });
 
 
-//  ZOOM PRODUCT DETAIL
+    //  ZOOM PRODUCT DETAIL
     $(".thumbnail__image").click(function () {
         let image = $(this).attr("src");
         $("#zoom").attr("src", image);
@@ -29,14 +44,13 @@ $(document).ready(function () {
         zoomrange: [3, 3]
     });
 
-
-//  LIST THUMB
+    //  LIST THUMB
     let list_thumb = $('#list-thumb');
     list_thumb.owlCarousel({
         items: 5, //10 items above 1000px browser width
     });
 
-//  FEATURE PRODUCT
+    //  FEATURE PRODUCT
     let feature_product = $('.list-feature-product');
     feature_product.owlCarousel({
         items: 4,

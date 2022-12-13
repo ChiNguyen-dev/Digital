@@ -192,17 +192,5 @@
         </div>
     </div>
 </div>
-<div class="mfp-bg"></div>
-<div class="mfp-wrap">
-    <div class="mfp-content">
-        <div class="popup-details">
-            <div class="block-popup-subscribe">
-                <div class="block-popup-content">
-                    <h2>Subscribe to our newsletter</h2>
-                    <p>First time subcribers enjoy 5% off their first order.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php getModal("subcribe"); ?>
 <?php get_footer(); ?>
