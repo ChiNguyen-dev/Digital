@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="public/css/import/login.css">
     <title>Login</title>
 </head>
-<body>
+<body data-vide-bg="public/js/ocean">
 <div class="signin">
-    <h1 class="signin__heading">Welcome back!</h1>
-    <p class="signin__welcome">Welcome back! Please enter your detail</p>
+    <h1 class="signin__heading">Đăng nhập!</h1>
+    <p class="signin__welcome">Chào mừng trở lại! Vui lòng nhập chi tiết của bạn</p>
     <form action="" class="signin__form" method="post">
         <div class="form__group">
             <input type="email" name="email" class="form__input" placeholder=" "
@@ -22,7 +22,7 @@
         <?php if (!empty($validation['email'])) echo "<p  style='color: #c0392b; font-size: 14px; margin: 0px 0 15px; padding-left: 8px;font-weight: 400; '>{$validation['email']}</p>" ?>
         <div class="form__group">
             <input type="password" name="password" class="form__input" placeholder=" ">
-            <label for="" class="form__label">Password</label>
+            <label for="" class="form__label">Mật khẩu</label>
         </div>
         <?php if (!empty($validation['password'])) echo "<p style='color: #c0392b; font-size: 14px; margin: 0px 0 15px;padding-left: 8px;font-weight: 400;'>{$validation['password']}</p>" ?>
         <?php if (!empty($validation['log_fail'])) echo "<p style='color: #c0392b; font-size: 14px; margin: 2px 0 15px;padding-left: 8px;font-weight: 400;'>{$validation['log_fail']}</p>" ?>
@@ -38,6 +38,9 @@
         </div>
     </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="public/js/jquery.vide.js"></script>
 </body>
 </html>
 

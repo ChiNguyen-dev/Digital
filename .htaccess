@@ -1,17 +1,10 @@
 RewriteEngine On
 
-#RewriteRule ^([a-zA-Z0-9_-]+)-([0-9]+).html$ email.php?mod=home&controller=index&action=index
-
 RewriteRule ^san-pham/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?mod=products&controllers=detail&action=detail&id=$2
-
-
-
-
-#RewriteRule ^danh-muc/([a-zA-Z0-9_-]+)$ index.php?mod=products&controllers=index&action=index&slug=$1
 
 RewriteRule ^danh-muc(.*)$ index.php?mod=products&controllers=index&action=index&cate=$1
 
-#RewriteRule ^danh-muc$ index.php?mod=products&controllers=index&action=index
+
 
 
 

@@ -32,6 +32,7 @@ function indexAction()
         $id = implode(",", $categoryID);
         $where = "AND p.category_id IN({$id})" . $priceFilter;
     }
+    $_SESSION["slug"] .= isset($_GET["gia-ban"]) ? "&price=" . $_GET["gia-ban"] . "&page=" : "&page=";
     $products = getProducts($limit, $where);
     load_view("index", ["products" => $products, "total_page" => $pagination["totalPage"], "page" => $page]);
 }
