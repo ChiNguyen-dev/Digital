@@ -127,7 +127,7 @@ $(document).ready(function () {
         $(this).addClass("color__infor--active");
     });
     // URL DEFAULT
-    const Default_URL = "http://localhost:8080/Digital/";
+    const Default_URL = "http://localhost/Digital/";
     const changeQtyItemCart = $(".table > tbody > tr > td > .num-order > .btn");
     changeQtyItemCart.on("click", function () {
         const isEvent = $(this).parent(".num-order").find("input[name='num-order']");

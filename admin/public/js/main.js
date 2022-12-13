@@ -41,7 +41,7 @@ $(document).ready(function () {
     });
 
     // URL DEFAULT
-    const Default_URL = "http://localhost:8080/Digital/admin/";
+    const Default_URL = "http://localhost/Digital/admin/";
 
     // ADD ROLE
     $("#add-role").click(function () {
